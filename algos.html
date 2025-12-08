@@ -13,152 +13,85 @@
 <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About DAA</a>
-    <a href="algos.html">Algorithms in Serenia</a>
+    <a href="algos.html">Algorithms</a>
+    <a href="project.html">Project</a>
     <a href="citylayout.html">City Layout</a>
 </nav>
 
 <section>
-    <h2>Overview</h2>
+    <h2>1. Dijkstra’s Algorithm – Shortest Path Routing</h2>
     <p>
-        Serenia is designed as a modern smart city where real-world systems are mapped 
-        to core algorithms learned in the Design and Analysis of Algorithms course.
-        From transportation and energy to water management and municipal operations, 
-        every subsystem of Serenia demonstrates how algorithms enable efficiency, 
-        safety, and optimization.
+        Used for emergency vehicle routing, transport hub optimization, 
+        and daily navigation. Roads act as weighted graph edges, allowing 
+        the system to find the fastest route.
     </p>
 </section>
 
 <section>
-    <h2>1. Dijkstra’s Algorithm – Emergency Routing & Transport Hub</h2>
+    <h2>2. Breadth-First Search (BFS) – Water & Sewer Network</h2>
     <p>
-        Serenia’s Transport Hub and road network operate on shortest-path logic.
-        Dijkstra’s Algorithm ensures:
-        <ul>
-            <li>Ambulances reach the Mini Hospital in minimum time.</li>
-            <li>Fire trucks navigate efficiently around residential blocks.</li>
-            <li>Daily commuters receive optimal route suggestions.</li>
-            <li>Goods vehicles find cost-efficient delivery paths.</li>
-        </ul>
-        The algorithm uses weighted edges representing road distances and traffic density.
+        BFS helps trace connectivity in pipelines, detect blockages, 
+        and ensure even water distribution across Serenia.
     </p>
 </section>
 
 <section>
-    <h2>2. Breadth-First Search (BFS) – Sewer, Water & Power Grid Connectivity</h2>
+    <h2>3. Depth-First Search (DFS) – Security Surveillance</h2>
     <p>
-        BFS helps the municipal team inspect and manage underground pipelines and wiring.
-        It is used to:
-        <ul>
-            <li>Detect blockages in sewer lines by level-wise exploration.</li>
-            <li>Trace water flow from the Central Lake to residential zones.</li>
-            <li>Check connectivity of energy distribution lines from the Energy Zone.</li>
-        </ul>
-        BFS is chosen because all edges are unweighted and level-based scanning is required.
+        CCTV network monitoring uses DFS for deep scanning of blocks, 
+        tracking suspicious paths or exploring sub-areas fully.
     </p>
 </section>
 
 <section>
-    <h2>3. Depth-First Search (DFS) – Security Surveillance & Area Scanning</h2>
+    <h2>4. Minimum Spanning Tree (MST) – Power & Streetlight Cost Optimization</h2>
     <p>
-        Serenia’s CCTV and surveillance systems use DFS to:
-        <ul>
-            <li>Perform deep scans of isolated regions.</li>
-            <li>Trace suspicious movement paths.</li>
-            <li>Explore building layouts in the Tech Park.</li>
-        </ul>
-        DFS helps when the goal is to explore complete paths before backtracking.
+        MST algorithms (Prim’s/Kruskal’s) minimize cost when connecting 
+        power grids, wind turbines, and street lighting systems.
     </p>
 </section>
 
 <section>
-    <h2>4. Minimum Spanning Tree (MST) – Power Line & Water Pipeline Cost Optimization</h2>
+    <h2>5. Greedy Algorithms – Waste Collection & Patrol Routes</h2>
     <p>
-        Prim's and Kruskal's algorithms reduce infrastructure installation costs.
-        They are used in:
-        <ul>
-            <li>Connecting wind turbines in the Energy Zone at minimum wiring cost.</li>
-            <li>Laying water pipelines from the Central Lake to all zones.</li>
-            <li>Creating efficient streetlight circuits in the Residential Area (Serenia Residency).</li>
-        </ul>
-        MST ensures all parts of the city are connected with minimum total edge weight.
+        Greedy methods help choose optimal local decisions such as 
+        shortest waste collection routes and police patrol scheduling.
     </p>
 </section>
 
 <section>
-    <h2>5. Greedy Algorithms – Street Lighting, Patrol Allocation & Waste Routes</h2>
+    <h2>6. Divide & Conquer – City Zoning & Traffic Segmentation</h2>
     <p>
-        Serenia applies Greedy strategies for tasks requiring quick, local optimization:
-        <ul>
-            <li>Street-light placement to cover maximum area with minimum poles.</li>
-            <li>Garbage truck routes for fast collection from Residential & Market areas.</li>
-            <li>Police patrol routes in the Government Zone for maximum coverage.</li>
-        </ul>
-        Greedy choices ensure fast and practical real-time decisions.
+        Serenia is divided into functional zones for planning and traffic 
+        distribution. Large problems are split into smaller subproblems.
     </p>
 </section>
 
 <section>
-    <h2>6. Divide and Conquer – Land Zoning & Traffic Load Distribution</h2>
+    <h2>7. Dynamic Programming – Hospital Resource Management</h2>
     <p>
-        Divide and Conquer supports city planners in:
-        <ul>
-            <li>Splitting Serenia into Residential, Commercial, Industrial, and Green Belt zones.</li>
-            <li>Dividing road traffic into smaller subnetworks to avoid congestion.</li>
-            <li>Optimizing construction scheduling in the Tech Park.</li>
-        </ul>
-        The approach helps manage complexity by breaking tasks into manageable parts.
+        DP optimizes medical supply distribution, bed allocation, and 
+        emergency scheduling during high demand.
     </p>
 </section>
 
 <section>
-    <h2>7. Dynamic Programming – Hospital Resources & Emergency Supply Chains</h2>
+    <h2>8. Sorting Algorithms – Market & Government Records</h2>
     <p>
-        The Mini Hospital and disaster management units use DP to:
-        <ul>
-            <li>Allocate beds, doctors, and equipment during peak hours.</li>
-            <li>Optimize medical supply routes from pharmacies to the hospital.</li>
-            <li>Predict and handle seasonal demand for utilities.</li>
-        </ul>
-        DP helps when overlapping subproblems and optimal substructures exist.
+        Sorting helps manage databases like tax records, property data, 
+        and market vendor management.
     </p>
 </section>
 
 <section>
-    <h2>8. Sorting Algorithms – Market Data, Tax Records & Inventory</h2>
+    <h2>9. Hashing – Identity, Vehicles & Security Systems</h2>
     <p>
-        Sorting is essential in multiple areas of Serenia:
-        <ul>
-            <li>Sorting vendor lists in the Market & Town Square.</li>
-            <li>Sorting municipal tax records by property ID.</li>
-            <li>Arranging hospital patient data by severity.</li>
-        </ul>
-        Efficient sorting improves lookup time and data processing speed.
+        Hashing allows quick lookup for citizen records, vehicle numbers, 
+        and face-recognition systems.
     </p>
 </section>
 
-<section>
-    <h2>9. Hashing – Vehicle, Citizen & Security Databases</h2>
-    <p>
-        Serenia maintains fast-access data systems using hash tables:
-        <ul>
-            <li>Vehicle registration lookup at checkpoints.</li>
-            <li>Citizen ID verification in Government Offices.</li>
-            <li>High-speed face-recognition used in the Security Zone.</li>
-        </ul>
-        Hashing ensures constant-time (O(1)) data access.
-    </p>
-</section>
-
-<section>
-    <h2>Conclusion</h2>
-    <p>
-        Serenia demonstrates how algorithmic thinking powers modern urban systems. 
-        Every component of the city—from transportation to utilities—relies on 
-        DAA principles to function efficiently, safely, and cost-effectively.
-    </p>
-</section>
-
-<footer>© 2025 Aditya | Serenia Smart City</footer>
+<footer>© 2025 Aditya</footer>
 
 </body>
 </html>
