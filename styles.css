@@ -1,60 +1,126 @@
+/* GENERAL PAGE STYLE */
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #e9f1f7;
     margin: 0;
+    padding: 0;
 }
 
+/* HEADER */
 header {
-    background: #222;
+    background: linear-gradient(135deg, #0b3d91, #1a73e8);
     color: white;
     text-align: center;
-    padding: 35px;
-    font-size: 22px;
+    padding: 45px 20px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 
+/* NAVIGATION BAR */
 nav {
-    background: #333;
-    padding: 18px;
+    background: #0b3d91;
+    padding: 15px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
 nav a {
     color: white;
-    margin: 25px;
+    margin: 20px;
     font-size: 20px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s ease;
+    padding: 8px 14px;
+    border-radius: 6px;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background: #1a73e8;
+    box-shadow: 0 0 10px rgba(255,255,255,0.7);
 }
 
+/* SECTION WRAPPER (for spacing) */
 section {
-    padding: 40px;
+    padding: 45px;
     width: 90%;
     max-width: 1100px;
-    margin: 35px auto;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.15);
-    font-size: 18px;
-    line-height: 1.6;
+    margin: 40px auto;
 }
 
+/* CARD STYLE */
+.card {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    padding: 35px;
+    font-size: 20px;
+    line-height: 1.9;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* PROJECT IMAGES */
 .project-img {
     width: 70%;
     display: block;
-    margin: 20px auto;
-    border: 3px solid #444;
-    border-radius: 10px;
+    margin: 25px auto;
+    border: 4px solid #0b3d91;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 26px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
 footer {
-    margin-top: 40px;
-    background: #222;
+    margin-top: 50px;
+    background: #0b3d91;
     color: white;
     text-align: center;
-    padding: 15px;
-    font-size: 16px;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+}
+
+/* ANIMATIONS */
+.fade-in {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+.delay-4 { animation-delay: 0.6s; }
+.delay-5 { animation-delay: 0.75s; }
+.delay-6 { animation-delay: 0.9s; }
+.delay-7 { animation-delay: 1.05s; }
+.delay-8 { animation-delay: 1.2s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
