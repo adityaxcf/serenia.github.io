@@ -2,9 +2,9 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #1a1a1a;
-    background: linear-gradient(180deg, #f4f6f9 0%, #e9ecf1 40%, #dfe3ea 70%, #eef1f5 100%);
+    color: #e5e7eb;
     min-height: 100%;
+    background: #1d1f22;
 }
 
 body {
@@ -12,47 +12,65 @@ body {
     overflow-x: hidden;
 }
 
-/* ---------------- HEADER ---------------- */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        180deg,
+        #f0f0f0 0%,
+        #c9c9c9 25%,
+        #8f8f8f 50%,
+        #3d3d3d 75%,
+        #1b1b1b 100%
+    );
+    background-size: 100% 300%;
+    animation: grayFlow 10s ease-in-out infinite;
+    opacity: 1;
+}
+
+@keyframes grayFlow {
+    0% { background-position: 50% 0%; }
+    50% { background-position: 50% 100%; }
+    100% { background-position: 50% 0%; }
+}
 
 header {
     text-align: center;
     padding: 30px 16px 24px;
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 header h1 {
     margin: 0;
     font-size: 28px;
-    letter-spacing: 0.06em;
-    color: #1a1a1a;
+    letter-spacing: 0.08em;
+    color: #ffffff;
 }
 
 header p {
     margin-top: 8px;
     font-size: 15px;
-    color: #444;
+    color: #e5e5e5;
 }
 
-/* ---------------- NAV ---------------- */
-
 nav {
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(8px);
     padding: 10px 12px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: #f3f3f3;
     font-size: 14px;
     font-weight: 600;
     padding: 6px 14px;
@@ -61,10 +79,9 @@ nav a {
 }
 
 nav a:hover {
-    background: rgba(0,0,0,0.07);
+    background: rgba(255,255,255,0.18);
+    color: #000;
 }
-
-/* ---------------- CONTENT ---------------- */
 
 section {
     width: 92%;
@@ -73,34 +90,31 @@ section {
     padding: 0 4px;
 }
 
-/* ---------------- CARDS ---------------- */
-
 .card {
-    background: rgba(255,255,255,0.55);
+    background: rgba(0,0,0,0.28);
     border-radius: 18px;
     padding: 24px;
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(0,0,0,0.12);
-    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
-    color: #1a1a1a;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+    color: #f5f5f5;
     transition: 0.25s ease;
 }
 
 .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 36px rgba(0,0,0,0.12);
-    border-color: rgba(0,0,0,0.2);
+    border-color: rgba(255,255,255,0.32);
 }
 
 .card h2,
 .card h3 {
     margin: 0 0 12px;
-    color: #1a1a1a;
+    color: #ffffff;
 }
 
 .card p {
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 .card ul {
@@ -118,26 +132,22 @@ section {
     margin-right: auto;
 }
 
-/* ---------------- IMAGES ---------------- */
-
 .project-img {
     width: 80%;
     max-width: 760px;
     display: block;
     margin: 22px auto;
     border-radius: 14px;
-    border: 2px solid rgba(0,0,0,0.15);
-    box-shadow: 0 12px 26px rgba(0,0,0,0.15);
+    border: 2px solid rgba(255,255,255,0.25);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.7);
     transition: 0.25s ease;
+    backdrop-filter: blur(6px);
 }
 
 .project-img:hover {
     transform: scale(1.04);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.2);
-    border-color: rgba(0,0,0,0.35);
+    border-color: rgba(255,255,255,0.5);
 }
-
-/* ---------------- FADE IN ---------------- */
 
 .fade-in {
     opacity: 0;
@@ -154,16 +164,13 @@ section {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ---------------- FOOTER ---------------- */
-
 footer {
     margin-top: 40px;
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(10px);
-    color: #333;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(8px);
+    color: #eee;
     text-align: center;
     padding: 14px 10px;
     font-size: 13px;
-    border-top: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0 -2px 14px rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(255,255,255,0.15);
 }
