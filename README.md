@@ -1,19 +1,18 @@
-# Serenia – City Design (DAA Course Project)
+# Serenia – Smart City (DAA Course Project)
 
-This is my course project for Design and Analysis of Algorithms (24ECSP206).  
-I designed a small smart-city model called **Serenia** and connected the zones of the city  
-with basic algorithms we studied in class.
+This project is part of my Design and Analysis of Algorithms course (24ECSP206).  
+I designed a small smart-city model called **Serenia** and connected the different 
+zones of the city to the algorithms we studied in class.
 
 The website includes:
 - My city layout sketches  
-- How I related different algorithms to city planning  
-- A short explanation of the project work  
+- How I used each algorithm in the design  
+- A short explanation of the project  
 
 ## Project Info
 **Name:** Aditya J  
-**USN:** 01FE24BCS310  
 **Instructor:** Prakash Hegade  
 **University:** KLE Technological University, Hubballi  
 
-## Website Link
+## Project Website
 https://adityaxcf.github.io/serenia.github.io/
