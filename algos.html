@@ -7,8 +7,8 @@
 <body>
 
 <header>
-    <h1>Algorithms Used in Serenia – A Smart City</h1>
-    <p>Mapping DAA concepts to real-world city functions</p>
+    <h1>Algorithms Used in Serenia</h1>
+    <p>How different DAA concepts fit into the city design</p>
 </header>
 
 <nav>
@@ -20,124 +20,122 @@
 </nav>
 
 <section class="card fade-in">
-    <h2>1. Dijkstra’s Algorithm – Shortest Path Routing</h2>
+    <h2>1. Dijkstra’s Algorithm – Shortest Paths</h2>
     <p>
-        In Serenia, roads between important zones such as the Residential Area, 
-        Mini Hospital, Government Offices, Tech Park, and Transport Hub are 
-        modeled as a weighted graph. Dijkstra’s Algorithm is used conceptually 
-        to find the shortest path between any two key locations.
+        In Serenia, I used the idea of Dijkstra’s algorithm to represent how vehicles 
+        would move between important places using the shortest or fastest route.  
+        This helps model real systems like navigation, ambulance routing, and emergency movement.
     </p>
     <ul>
-        <li>Ambulances take the fastest route to the hospital during emergencies.</li>
-        <li>Fire trucks navigate optimally to fire-prone or dense areas.</li>
-        <li>Daily commuters can be guided on the shortest or least congested path.</li>
+        <li>Finding the quickest path to the hospital.</li>
+        <li>Routing between residential areas and commercial zones.</li>
+        <li>Reducing travel time in the city network.</li>
     </ul>
 </section>
 
 <section class="card fade-in delay-1">
-    <h2>2. Breadth-First Search (BFS) – Water & Sewer Networks</h2>
+    <h2>2. BFS – Utility and Service Reachability</h2>
     <p>
-        BFS is used to explore unweighted networks level by level. In Serenia, 
-        the water pipelines and sewer systems can be visualized as graphs where 
-        BFS helps to:
+        Breadth-First Search is used to check how different areas are connected in terms 
+        of services like water supply or waste management. Since BFS works level-by-level, 
+        it helps ensure every zone is reachable.
     </p>
     <ul>
-        <li>Check if all residential blocks receive water from the Central Lake.</li>
-        <li>Trace how a blockage in a sewer line affects downstream regions.</li>
-        <li>Ensure connectivity in the underground utility network.</li>
+        <li>Tracing water pipeline flow.</li>
+        <li>Ensuring waste collection covers all regions.</li>
+        <li>Checking connectivity of basic utilities.</li>
     </ul>
 </section>
 
 <section class="card fade-in delay-2">
-    <h2>3. Depth-First Search (DFS) – Security & Monitoring</h2>
+    <h2>3. DFS – Security and Monitoring</h2>
     <p>
-        DFS is useful for exploring paths deeply before backtracking. In Serenia, 
-        DFS can be applied in:
+        DFS helps explore deeper paths first. I used this idea for representing how 
+        security checks or surveillance systems might scan different parts of the city.
     </p>
     <ul>
-        <li>Scanning CCTV camera graphs in public squares and markets.</li>
-        <li>Exploring building layouts in the Tech Park and Government Zone.</li>
-        <li>Tracing suspicious movement across multiple checkpoints.</li>
+        <li>Exploring CCTV camera paths.</li>
+        <li>Checking building-wise scanning routes.</li>
+        <li>Inspecting emergency exits and routes.</li>
     </ul>
 </section>
 
 <section class="card fade-in delay-3">
-    <h2>4. Minimum Spanning Tree (MST) – Power & Streetlight Networks</h2>
+    <h2>4. Minimum Spanning Tree – Cost-Effective Connections</h2>
     <p>
-        To reduce infrastructure cost, power lines and streetlight networks can 
-        be viewed as a weighted graph. MST algorithms like Prim’s and Kruskal’s 
-        help connect all required locations using minimum total cable length.
+        MST concepts helped me understand how to connect different places in the city 
+        using minimum cost. This mainly applies to wiring, streetlights, and power lines.
     </p>
     <ul>
-        <li>Connecting wind turbines and power stations in the Energy Zone.</li>
-        <li>Laying out streetlights covering all main roads with minimal wiring.</li>
-        <li>Supplying electricity to all zones while keeping cost under control.</li>
+        <li>Connecting power supply points.</li>
+        <li>Planning streetlight wiring.</li>
+        <li>Minimising total connection cost.</li>
     </ul>
 </section>
 
 <section class="card fade-in delay-4">
-    <h2>5. Greedy Algorithms – Waste Collection & Patrol Planning</h2>
+    <h2>5. Greedy Approach – Quick Local Decisions</h2>
     <p>
-        Greedy strategies make the best local choice at each step to quickly 
-        build a good overall solution. In Serenia, they conceptually apply to:
+        A greedy method takes the best choice at each step. This fits situations where 
+        fast, local decisions are needed in the city.
     </p>
     <ul>
-        <li>Choosing the next nearest garbage pickup spot for collection trucks.</li>
-        <li>Planning police patrol routes to cover important junctions first.</li>
-        <li>Assigning limited resources to the highest priority areas.</li>
+        <li>Choosing the next waste pickup point.</li>
+        <li>Selecting important roads for patrolling.</li>
+        <li>Optimising small tasks during peak hours.</li>
     </ul>
 </section>
 
 <section class="card fade-in delay-5">
-    <h2>6. Divide & Conquer – Zoning and Traffic Segmentation</h2>
+    <h2>6. Divide & Conquer – Breaking the City into Zones</h2>
     <p>
-        The overall complexity of Serenia is reduced by dividing it into zones: 
-        Residential, Commercial, Government, Tech Park, Green Belt, and so on. 
-        Each zone can be planned separately and later combined into one city.
+        I used the idea of dividing the city into smaller regions such as residential, 
+        commercial, green belt, tech park, etc. Each zone is planned separately and 
+        then combined into a full city.
     </p>
     <ul>
-        <li>Breaking traffic flow into smaller subnetworks for analysis.</li>
-        <li>Planning construction work region-by-region.</li>
-        <li>Handling infrastructure design in stages instead of all at once.</li>
+        <li>Reducing complexity by handling one zone at a time.</li>
+        <li>Managing local traffic independently.</li>
+        <li>Simplifying construction and planning.</li>
     </ul>
 </section>
 
 <section class="card fade-in delay-6">
-    <h2>7. Dynamic Programming – Hospital & Resource Management</h2>
+    <h2>7. Dynamic Programming – Resource Allocation</h2>
     <p>
-        Dynamic Programming is used when problems have overlapping subproblems 
-        and optimal substructure. In Serenia, it can be applied to:
+        DP helps when a problem has smaller overlapping parts. I used this thinking 
+        while planning hospital resources and emergency handling.
     </p>
     <ul>
-        <li>Optimizing allocation of beds, doctors, and equipment in the Mini Hospital.</li>
-        <li>Scheduling emergency vehicles based on demand patterns.</li>
-        <li>Planning stock levels for critical medical supplies.</li>
+        <li>Planning bed and staff usage.</li>
+        <li>Managing limited medical supplies.</li>
+        <li>Handling peak-time emergency requests.</li>
     </ul>
 </section>
 
 <section class="card fade-in delay-7">
-    <h2>8. Sorting Algorithms – Records and Prioritization</h2>
+    <h2>8. Sorting – Organised City Data</h2>
     <p>
-        Sorting is fundamental for organizing data. In Serenia, sorting algorithms 
-        can be used for:
+        Sorting helps keep records neat and easy to access. In Serenia, I used this 
+        concept for maintaining ordered data.
     </p>
     <ul>
-        <li>Arranging property tax records by zone, owner, or due date.</li>
-        <li>Sorting service requests or complaints by time or severity.</li>
-        <li>Managing lists of vendors, vehicles, and citizens.</li>
+        <li>Sorting property details by zone.</li>
+        <li>Arranging market vendor lists.</li>
+        <li>Prioritising service request queues.</li>
     </ul>
 </section>
 
 <section class="card fade-in delay-8">
-    <h2>9. Hashing – Fast Lookup for IDs & Vehicles</h2>
+    <h2>9. Hashing – Fast Lookup</h2>
     <p>
-        Hashing enables near constant-time lookup in large datasets. In Serenia, 
-        hash tables may be used for:
+        Hashing allows quick access to information. I related this to situations 
+        where fast checking is needed in the city.
     </p>
     <ul>
-        <li>Quick verification of citizen IDs in Government Offices.</li>
-        <li>Fast lookup of vehicle registration numbers at checkpoints.</li>
-        <li>Maintaining and accessing important records efficiently.</li>
+        <li>Vehicle number checking.</li>
+        <li>Citizen ID verification.</li>
+        <li>Maintaining city records efficiently.</li>
     </ul>
 </section>
 
