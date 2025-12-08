@@ -4,7 +4,7 @@
     <title>SERENIA CITY – DAA Course Project</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dark-mode">
 
 <header>
     <h1>SERENIA – A Smart City</h1>
@@ -17,6 +17,7 @@
     <a href="citylayout.html">City Layout</a>
     <a href="algos.html">Algorithms</a>
     <a href="about.html">About DAA</a>
+    <button id="theme-toggle">Light mode</button>
 </nav>
 
 <section class="card fade-in center-text" style="max-width: 650px; margin-top: 25px;">
@@ -52,6 +53,40 @@
 </section>
 
 <footer>© 2025 Aditya | KLE Technological University</footer>
+
+<script>
+    const body = document.body;
+    const toggleBtn = document.getElementById('theme-toggle');
+
+    function applySavedTheme() {
+        const saved = localStorage.getItem('serenia-theme');
+        if (saved === 'light') {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+            toggleBtn.textContent = 'Dark mode';
+        } else {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+            toggleBtn.textContent = 'Light mode';
+        }
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+            localStorage.setItem('serenia-theme', 'light');
+            toggleBtn.textContent = 'Dark mode';
+        } else {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+            localStorage.setItem('serenia-theme', 'dark');
+            toggleBtn.textContent = 'Light mode';
+        }
+    });
+
+    applySavedTheme();
+</script>
 
 </body>
 </html>
