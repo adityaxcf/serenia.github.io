@@ -17,6 +17,3 @@ The website includes:
 
 ## Website Link
 https://adityaxcf.github.io/serenia.github.io/
-
-I referred to online material and used ChatGPT only for understanding and formatting.  
-Everything else is done by me.
