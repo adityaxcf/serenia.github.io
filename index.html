@@ -1,57 +1,259 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SERENIA CITY – DAA Course Project</title>
+    <title>Serenia – Smart City Design using DAA</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <h1>SERENIA – A Smart City</h1>
-    <p>Design & Analysis of Algorithms – Course Project</p>
-</header>
+<section id="hero" class="hero fade-in">
+    <h1 class="hero-title"><span>SERENIA</span> – SMART CITY</h1>
+    <p class="hero-sub">A city design project built using Design and Analysis of Algorithms (DAA)</p>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="project.html">Project</a>
-    <a href="citylayout.html">City Layout</a>
-    <a href="algos.html">Algorithms</a>
-    <a href="about.html">About DAA</a>
-</nav>
+    <div class="hero-meta">
+        <span>Course Code: 24ECSP206</span>
+        <span>Topic: City Design</span>
+    </div>
 
-<section class="card fade-in center-text" style="max-width: 650px; margin-top: 25px;">
-    <h2 style="margin-bottom: 15px;">Project Details</h2>
+    <div class="hero-meta">
+        <span>Name: Aditya J</span>
+        <span>USN: 01FE24BCS310</span>
+    </div>
 
-    <p><strong>Name:</strong> Aditya J</p>
-    <p><strong>USN:</strong> 01FE24BCS310</p>
-    <p><strong>Course Code:</strong> 24ECSP206</p>
-    <p><strong>Topic:</strong> City Design</p>
-    <p><strong>Instructor:</strong> Prakash Hegade</p>
-    <p><strong>University:</strong> KLE Technological University, Hubballi</p>
+    <div class="hero-meta">
+        <span>Instructor: Prakash Hegade</span>
+        <span>KLE Technological University, Hubballi</span>
+    </div>
 
-    <p style="margin-top: 10px;">
-        <strong>LinkedIn:</strong>
+    <a href="#project" class="hero-button">
+        Explore Project
+        <span class="hero-scroll-icon">↓</span>
+    </a>
+
+    <div class="hero-footer">
+        LinkedIn:
         <a href="https://www.linkedin.com/in/aditya-jalhallikar-08a359242" target="_blank">
             linkedin.com/in/aditya-jalhallikar
         </a>
-    </p>
+    </div>
 </section>
 
-<section class="card fade-in delay-1" style="max-width: 850px;">
-    <h2>About This Project</h2>
-    <p>
-        I created a conceptual smart city called Serenia as part of my DAA course project. 
-        My aim was to connect the topics from the DAA syllabus to different parts of a city 
-        and show how algorithms can be used in real planning and real systems.
-    </p>
-    <p>
-        I used ideas like shortest path, MST, graph traversal, greedy methods, and 
-        dynamic programming to explain how different zones in the city could function 
-        efficiently.
-    </p>
+<nav>
+    <a href="#hero">Home</a>
+    <a href="#project">Project</a>
+    <a href="#layout">City Layout</a>
+    <a href="#algorithms">Algorithms</a>
+    <a href="#about">About DAA</a>
+</nav>
+
+<section id="project" class="section fade-in delay-1">
+    <div class="section-header">
+        <div class="section-kicker">Project Overview</div>
+        <h2 class="section-title">What is Serenia?</h2>
+    </div>
+    <div class="card">
+        <p>
+            Serenia is a small conceptual smart city model that I designed as part of my DAA course project.
+            The main idea is to take the algorithms from the DAA syllabus and connect them to different
+            parts of a city such as roads, services, and resource management.
+        </p>
+        <p>
+            I divided the city into zones like residential area, commercial zone, hospital, government offices,
+            tech park, green belt, and transport hub. After deciding the zones, I related each of them to
+            suitable algorithms such as Dijkstra’s, BFS, DFS, Minimum Spanning Tree, greedy methods,
+            and dynamic programming.
+        </p>
+        <p>
+            I referred to online resources for better understanding and used ChatGPT mainly for clarification
+            and formatting support. The planning, sketches, layout decisions and explanations were done by me
+            based on my understanding of the course.
+        </p>
+
+        <div class="detail-grid">
+            <div class="detail-item"><span>Name:</span> Aditya J</div>
+            <div class="detail-item"><span>USN:</span> 01FE24BCS310</div>
+            <div class="detail-item"><span>Course:</span> Design and Analysis of Algorithms</div>
+            <div class="detail-item"><span>Course Code:</span> 24ECSP206</div>
+            <div class="detail-item"><span>Topic:</span> City Design</div>
+            <div class="detail-item"><span>Instructor:</span> Prakash Hegade</div>
+        </div>
+    </div>
 </section>
 
-<footer>© 2025 Aditya | KLE Technological University</footer>
+<section id="layout" class="section fade-in delay-2">
+    <div class="section-header">
+        <div class="section-kicker">City Blueprint</div>
+        <h2 class="section-title">Serenia City Layout</h2>
+    </div>
+    <div class="card">
+        <div class="layout-wrapper">
+            <div class="layout-text">
+                <h3>Main Zoning Map</h3>
+                <p>
+                    The first layout shows the main zoning sketch of Serenia. I placed key areas like
+                    residential, commercial, hospital, tech park, government offices, green belt and
+                    transport hub in a simple and understandable structure. This helped me visualise
+                    how people and services would move between these regions.
+                </p>
+                <p>
+                    While drawing this, I kept in mind which zones would be connected frequently, where
+                    emergency access is important, and which paths should be shorter or more direct.
+                    This later helped when linking the city to algorithms like shortest path and MST.
+                </p>
+                <img src="images/layout1.jpeg" class="project-img" alt="Serenia City Layout 1">
+            </div>
+            <div class="layout-text">
+                <h3>Planning Notes and Details</h3>
+                <p>
+                    The second layout page contains my handwritten notes. Here I planned land usage,
+                    rough measurements, zone placement and some reasoning behind keeping certain
+                    areas next to each other.
+                </p>
+                <p>
+                    These notes were useful when finalising the structure of Serenia and made it
+                    easier to write explanations for the project. They also helped me think about
+                    where algorithms like greedy methods or dynamic programming might fit in
+                    when dealing with limited resources or repeated decisions.
+                </p>
+                <img src="images/layout2.jpeg" class="project-img" alt="Serenia City Layout 2">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="algorithms" class="section fade-in delay-3">
+    <div class="section-header">
+        <div class="section-kicker">Algorithm Mapping</div>
+        <h2 class="section-title">How Algorithms Fit into Serenia</h2>
+    </div>
+    <div class="card">
+        <p>
+            The main goal of this project was to connect DAA concepts to real-world city planning.
+            Below are some of the algorithms from the syllabus and how I imagined them being used
+            inside Serenia.
+        </p>
+        <div class="algos-grid">
+            <div class="card algo-card">
+                <h3>1. Dijkstra’s Algorithm</h3>
+                <p>Used to model shortest and fastest routes inside the city.</p>
+                <ul>
+                    <li>Finding quickest path to the hospital.</li>
+                    <li>Routing between residential and commercial zones.</li>
+                    <li>Reducing overall travel time in the road network.</li>
+                </ul>
+            </div>
+            <div class="card algo-card">
+                <h3>2. BFS</h3>
+                <p>Used for reachability and coverage analysis of services.</p>
+                <ul>
+                    <li>Checking if all zones receive water supply.</li>
+                    <li>Planning waste collection coverage.</li>
+                    <li>Ensuring basic city services are connected.</li>
+                </ul>
+            </div>
+            <div class="card algo-card">
+                <h3>3. DFS</h3>
+                <p>Used for deeper path exploration in limited regions.</p>
+                <ul>
+                    <li>Scanning CCTV routes in public spaces.</li>
+                    <li>Exploring building-wise security checks.</li>
+                    <li>Inspecting internal paths or escape routes.</li>
+                </ul>
+            </div>
+            <div class="card algo-card">
+                <h3>4. Minimum Spanning Tree</h3>
+                <p>Used to think about cost-effective connections.</p>
+                <ul>
+                    <li>Planning streetlight connections.</li>
+                    <li>Laying power lines between zones.</li>
+                    <li>Reducing total wiring cost.</li>
+                </ul>
+            </div>
+            <div class="card algo-card">
+                <h3>5. Greedy Approach</h3>
+                <p>Used where quick local decisions are needed.</p>
+                <ul>
+                    <li>Choosing next dustbin or area for garbage pickup.</li>
+                    <li>Selecting roads for patrolling first.</li>
+                    <li>Handling simple decisions in peak hours.</li>
+                </ul>
+            </div>
+            <div class="card algo-card">
+                <h3>6. Divide and Conquer</h3>
+                <p>Used to conceptually split the city into manageable zones.</p>
+                <ul>
+                    <li>Planning one region at a time.</li>
+                    <li>Managing local traffic separately per zone.</li>
+                    <li>Reducing the complexity of overall design.</li>
+                </ul>
+            </div>
+            <div class="card algo-card">
+                <h3>7. Dynamic Programming</h3>
+                <p>Used for repeated decisions and limited resources.</p>
+                <ul>
+                    <li>Allocating beds and staff in the hospital.</li>
+                    <li>Managing limited medical supplies.</li>
+                    <li>Handling multiple emergencies in an organised way.</li>
+                </ul>
+            </div>
+            <div class="card algo-card">
+                <h3>8. Sorting</h3>
+                <p>Used to keep city data neat and searchable.</p>
+                <ul>
+                    <li>Sorting property records by zone.</li>
+                    <li>Arranging vendor and shop lists.</li>
+                    <li>Ordering complaints or service requests.</li>
+                </ul>
+            </div>
+            <div class="card algo-card">
+                <h3>9. Hashing</h3>
+                <p>Used for fast lookups in records.</p>
+                <ul>
+                    <li>Quick citizen or ID verification.</li>
+                    <li>Vehicle number checking at points.</li>
+                    <li>Maintaining fast-access city records.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section fade-in delay-4">
+    <div class="section-header">
+        <div class="section-kicker">Course Context</div>
+        <h2 class="section-title">About DAA and the Lab</h2>
+    </div>
+    <div class="card">
+        <h3>Design and Analysis of Algorithms</h3>
+        <p>
+            Design and Analysis of Algorithms (DAA) is a subject that teaches how to solve
+            problems efficiently. It focuses on how an algorithm behaves for different inputs,
+            how much time it takes, how much memory it uses, and why one method can be better
+            than another.
+        </p>
+        <p>
+            In this course we learn time and space complexity, recursion, divide and conquer,
+            greedy methods, dynamic programming, hashing, searching, sorting and basic graph
+            algorithms. These topics form an important part of problem-solving in computer science.
+        </p>
+
+        <h3>Lab Work and Project</h3>
+        <p>
+            In the DAA lab, we implement many of these algorithms as programs and observe how
+            they behave with different kinds of input. We work with searching, sorting, tree
+            operations, graph traversal and shortest path problems.
+        </p>
+        <p>
+            As part of the lab, I chose to design Serenia as my course project. Mapping the
+            algorithms to a smart city model helped me clearly understand where these concepts
+            can appear in real situations instead of only in theory or coding problems.
+        </p>
+    </div>
+</section>
+
+<footer>
+    © 2025 Aditya | Serenia – Smart City Design using DAA
+</footer>
 
 </body>
 </html>
