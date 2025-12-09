@@ -133,3 +133,13 @@ footer {
     color: #b4b6c2;
     border-top: 1px solid #262730;
 }
+.linkedin-link {
+    color: #4da3ff;     /* soft LinkedIn blue */
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.linkedin-link:hover {
+    color: #82c3ff;
+    text-decoration: underline;
+}
