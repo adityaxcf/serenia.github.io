@@ -79,30 +79,14 @@ section {
     box-shadow: 0 12px 30px rgba(0,0,0,0.55);
 }
 
-/* FLOAT + NEON WHITE GLOW */
+/* FLOAT + NEON GLOW */
 .card:hover {
     transform: translateY(-10px);
-
     border-color: #ffffffcc;
-
     box-shadow:
         0 0 14px rgba(255,255,255,0.45),
         0 0 24px rgba(255,255,255,0.30),
         0 16px 40px rgba(0,0,0,0.75);
-}
-
-.card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 2px;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-
-.card:hover::before {
-    opacity: 1;
 }
 
 .card.center-text {
@@ -158,82 +142,62 @@ footer {
 }
 
 /* -----------------------------
-   ALGO DROPDOWN BUTTON + BOX
+   PREMIUM DETAILS / SUMMARY DROPDOWN
 ------------------------------ */
-.algo-btn {
-    background: #ffffff10;
-    color: #ffffff;
-    border: 1px solid #ffffff30;
-    padding: 10px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.25s ease;
-    margin-top: 10px;
+
+details.algo-drop {
+    margin-top: 14px;
 }
 
-.algo-btn:hover {
-    background: #ffffff20;
+details.algo-drop summary {
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.04);
+    color: #fff;
+    font-weight: 600;
+    user-select: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+details.algo-drop summary:hover {
+    background: rgba(255,255,255,0.08);
     transform: translateY(-2px);
 }
 
-/* DROPDOWN BOX */
-.algo-box {
-    max-height: 0;
-    overflow: hidden;
-    background: #111217;
-    border: 1px solid #2b2c34;
-    border-radius: 12px;
-    margin-top: 14px;
-    transition: max-height 0.35s ease;
-}
-
-.algo-box.open {
-    max-height: 500px;
-}
-
-.algo-box pre {
-    padding: 20px;
-    font-size: 14px;
-    white-space: pre-wrap;
-    color: #ffffff;
-}
-/* PURE CSS DROPDOWN SYSTEM */
-.algo-toggle {
-    display: block;
-    margin-top: 12px;
-}
-
-.algo-toggle input {
+details.algo-drop summary::-webkit-details-marker {
     display: none;
 }
 
-.algo-toggle .algo-btn {
-    display: inline-block;
-    background: #ffffff10;
-    padding: 10px 16px;
-    border: 1px solid #ffffff30;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.25s ease;
+details.algo-drop[open] summary {
+    background: rgba(255,255,255,0.10);
 }
 
-.algo-toggle input:checked + .algo-btn {
-    background: #ffffff30;
+details.algo-drop summary::after {
+    content: "▾";
+    font-size: 12px;
+    margin-left: 10px;
+    opacity: 0.9;
+    transition: transform 0.25s ease;
 }
 
-.algo-toggle .algo-box {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
-    background: #111217;
-    border: 1px solid #2b2c34;
-    border-radius: 12px;
+details.algo-drop[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* CONTENT AREA OF ALGO DROP */
+details.algo-drop pre {
     margin-top: 14px;
-}
-
-.algo-toggle input:checked ~ .algo-box {
-    max-height: 500px;
-    padding-bottom: 10px;
+    padding: 18px;
+    background: #0f1114;
+    border-radius: 12px;
+    border: 1px solid #2b2c34;
+    font-size: 14px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: #e9eef6;
 }
