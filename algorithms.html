@@ -4,13 +4,14 @@
     <title>Algorithms in Serenia City</title>
     <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
 
 <header>
     <h1>Algorithms Used in Serenia</h1>
-    <p>How DAA concepts fit into the city design</p>
+    <p>Real-world, business-oriented applications inside a smart city model</p>
 </header>
 
 <nav>
@@ -24,14 +25,26 @@
 
 <!-- 1. DIJKSTRA -->
 <section class="card fade-in">
-    <h2>1. Dijkstra’s Algorithm – Shortest Paths</h2>
+    <h2>1. Dijkstra’s Algorithm – Smart Transportation & Emergency Response</h2>
     <p>
-        I used Dijkstra’s algorithm idea for shortest path travel inside Serenia.
+        In Serenia, the transportation network functions like a real smart-city business model. 
+        Dijkstra’s algorithm is used as the core of the “Smart Routing Engine” that powers:
+        <br><br>
+        • Fastest emergency routes for ambulances and fire vehicles  
+        • Dynamic re-routing during traffic congestion  
+        • Optimized public transport schedules  
+        <br><br>
+        Companies like Uber, Ola, and Google Maps rely on shortest-path systems.  
+        Serenia adopts the same concept to reduce fuel costs, improve emergency response time,
+        and ultimately make mobility more efficient and profitable.
     </p>
 
-    <button class="algo-btn">Show Algorithm</button>
-    <div class="algo-box">
-        <pre>
+    <label class="algo-toggle">
+        <input type="checkbox">
+        <span class="algo-btn">Show Algorithm</span>
+
+        <div class="algo-box">
+            <pre>
 function dijkstra(graph, source):
     dist = array of infinity
     dist[source] = 0
@@ -39,172 +52,233 @@ function dijkstra(graph, source):
     pq = priority queue
     pq.push(source, 0)
 
-    while pq is not empty:
+    while pq not empty:
         u = pq.pop()
-        if u in visited:
-            continue
+        if u in visited: continue
         visited.add(u)
 
-        for each neighbor v of u:
+        for each v in neighbors(u):
             w = weight(u, v)
             if dist[u] + w < dist[v]:
                 dist[v] = dist[u] + w
                 pq.push(v, dist[v])
 
     return dist
-        </pre>
-    </div>
+            </pre>
+        </div>
+    </label>
 </section>
 
 
 <!-- 2. BFS -->
 <section class="card fade-in delay-1">
-    <h2>2. BFS – Utility and Service Reachability</h2>
-    <p>BFS helps check service reachability across Serenia.</p>
+    <h2>2. BFS – Utility Distribution & City-Wide Service Coverage</h2>
+    <p>
+        BFS is used to design Serenia’s essential service distribution model.  
+        It helps simulate how water, electricity, waste collection and public Wi-Fi spread 
+        across the city in a level-by-level structure.
+        <br><br>
+        This approach is used by municipal corporations to ensure **every zone receives services 
+        without gaps**. Businesses like ISPs and logistics companies also use BFS for coverage planning.
+        <br><br>
+        In Serenia, BFS ensures equal resource delivery, reducing operational cost and boosting 
+        service reliability.
+    </p>
 
-    <button class="algo-btn">Show Algorithm</button>
-    <div class="algo-box">
-        <pre>
+    <label class="algo-toggle">
+        <input type="checkbox">
+        <span class="algo-btn">Show Algorithm</span>
+
+        <div class="algo-box">
+            <pre>
 function BFS(graph, start):
-    visited = empty set
+    visited = set()
     queue = empty queue
     queue.enqueue(start)
     visited.add(start)
 
-    while queue is not empty:
+    while queue not empty:
         node = queue.dequeue()
-        for each neighbor in graph[node]:
-            if neighbor not in visited:
-                visited.add(neighbor)
-                queue.enqueue(neighbor)
-        </pre>
-    </div>
+        for v in neighbors(node):
+            if v not in visited:
+                visited.add(v)
+                queue.enqueue(v)
+            </pre>
+        </div>
+    </label>
 </section>
 
 
 <!-- 3. DFS -->
 <section class="card fade-in delay-2">
-    <h2>3. DFS – Security and Monitoring</h2>
-    <p>DFS represents deep-path inspection and surveillance routes.</p>
+    <h2>3. DFS – Security Scanning & Inspection Systems</h2>
+    <p>
+        Serenia uses DFS to simulate deep inspection tasks such as:
+        <br><br>
+        • Security surveillance route scanning  
+        • Fire safety inspections inside buildings  
+        • Infrastructure integrity checks  
+        <br><br>
+        Businesses like security firms and IoT-based monitoring companies use DFS-style traversal 
+        to analyze internal environments thoroughly.
+    </p>
 
-    <button class="algo-btn">Show Algorithm</button>
-    <div class="algo-box">
-        <pre>
+    <label class="algo-toggle">
+        <input type="checkbox">
+        <span class="algo-btn">Show Algorithm</span>
+
+        <div class="algo-box">
+            <pre>
 function DFS(node):
     visited.add(node)
-    for each neighbor in graph[node]:
-        if neighbor not in visited:
-            DFS(neighbor)
-        </pre>
-    </div>
+    for v in neighbors(node):
+        if v not in visited:
+            DFS(v)
+            </pre>
+        </div>
+    </label>
 </section>
 
 
 <!-- 4. MST -->
 <section class="card fade-in delay-3">
-    <h2>4. Minimum Spanning Tree – Cost-Efficient Connections</h2>
-    <p>MST helps design minimum-cost wiring and connectivity.</p>
+    <h2>4. Minimum Spanning Tree – Cost-Optimized Infrastructure</h2>
+    <p>
+        MST is used to reduce infrastructure cost in Serenia by designing:
+        <br><br>
+        • Streetlight wiring  
+        • Fiber-optic internet routes  
+        • Water pipeline connections  
+        • Power grid layouts  
+        <br><br>
+        Telecom companies like Jio and Airtel use MST concepts to minimize cable length and reduce 
+        installation expenses. Serenia applies the same logic to cut costs and maximize efficiency.
+    </p>
 
-    <button class="algo-btn">Show Algorithm</button>
-    <div class="algo-box">
-        <pre>
+    <label class="algo-toggle">
+        <input type="checkbox">
+        <span class="algo-btn">Show Algorithm</span>
+
+        <div class="algo-box">
+            <pre>
 function kruskal(graph):
     mst = empty set
     sort edges by weight
-    create disjoint set DSU
+    create DSU
 
-    for each edge (u, v, w):
+    for each (u, v, w) in edges:
         if find(u) != find(v):
             union(u, v)
             mst.add((u, v, w))
 
     return mst
-        </pre>
-    </div>
+            </pre>
+        </div>
+    </label>
 </section>
 
 
-<!-- 5. GREEDY -->
+<!-- 5. Greedy -->
 <section class="card fade-in delay-4">
-    <h2>5. Greedy Method – Fast Local Decisions</h2>
-    <p>Greedy logic is used for quick city decisions.</p>
+    <h2>5. Greedy Strategy – Daily Operational Optimization</h2>
+    <p>
+        Serenia uses greedy logic for quick and efficient decisions, such as:
+        <br><br>
+        • Selecting next garbage pickup location  
+        • Assigning traffic police to hotspots  
+        • Allocating parking slots dynamically  
+        • Choosing energy-saving modes for streetlights  
+        <br><br>
+        Greedy methods are heavily used in logistics, delivery platforms, and micro-operations 
+        to reduce waiting time and optimize daily workflows.
+    </p>
 
-    <button class="algo-btn">Show Algorithm</button>
-    <div class="algo-box">
-        <pre>
+    <label class="algo-toggle">
+        <input type="checkbox">
+        <span class="algo-btn">Show Algorithm</span>
+
+        <div class="algo-box">
+            <pre>
 function greedy(problem):
     solution = empty set
-
-    while not finished(problem):
-        choice = best_local_choice(problem)
+    while not done:
+        choice = best_local_choice()
         solution.add(choice)
         update(problem, choice)
-
     return solution
-        </pre>
-    </div>
+            </pre>
+        </div>
+    </label>
 </section>
 
 
-<!-- 6. DIVIDE & CONQUER -->
+<!-- 6. Divide & Conquer -->
 <section class="card fade-in delay-5">
-    <h2>6. Divide & Conquer – Splitting the City into Zones</h2>
-    <p>Divide & conquer helps break Serenia into manageable zones.</p>
+    <h2>6. Divide & Conquer – Smart Zoning for Scalable Growth</h2>
+    <p>
+        Serenia is divided into zones like residential, commercial, government, recreation, and 
+        tech districts. This follows Divide & Conquer principles:
+        <br><br>
+        • Split city into independent subproblems  
+        • Solve planning for each zone  
+        • Combine to form an efficient whole  
+        <br><br>
+        This model is used by real urban planning agencies and real estate investors 
+        to design manageable, scalable cities.
+    </p>
 
-    <button class="algo-btn">Show Algorithm</button>
-    <div class="algo-box">
-        <pre>
+    <label class="algo-toggle">
+        <input type="checkbox">
+        <span class="algo-btn">Show Algorithm</span>
+
+        <div class="algo-box">
+            <pre>
 function divideAndConquer(problem):
-    if size(problem) is small:
-        return direct_solution(problem)
-
+    if small(problem):
+        return direct_solution
     left, right = split(problem)
-    leftAns = divideAndConquer(left)
-    rightAns = divideAndConquer(right)
-    return combine(leftAns, rightAns)
-        </pre>
-    </div>
+    L = divideAndConquer(left)
+    R = divideAndConquer(right)
+    return combine(L, R)
+            </pre>
+        </div>
+    </label>
 </section>
 
 
 <!-- 7. DP -->
 <section class="card fade-in delay-6">
-    <h2>7. Dynamic Programming – Resource Allocation</h2>
-    <p>DP helps with efficient resource distribution inside Serenia.</p>
+    <h2>7. Dynamic Programming – Hospital & Resource Allocation Model</h2>
+    <p>
+        Serenia uses DP logic in its emergency management system:
+        <br><br>
+        • Allotting hospital beds efficiently  
+        • Assigning medical staff based on shift load  
+        • Predicting emergency demand  
+        • Optimizing budget allocation  
+        <br><br>
+        Large-scale organizations use DP for scheduling, cost optimization, and inventory planning.  
+        Serenia adapts the same approach for real-world, revenue-oriented decision-making.
+    </p>
 
-    <button class="algo-btn">Show Algorithm</button>
-    <div class="algo-box">
-        <pre>
+    <label class="algo-toggle">
+        <input type="checkbox">
+        <span class="algo-btn">Show Algorithm</span>
+
+        <div class="algo-box">
+            <pre>
 function DP():
-    dp = array
+    dp = array of size n
     initialize dp
-
-    for i from start to end:
-        dp[i] = best value from previous states
-
-    return dp[end]
-        </pre>
-    </div>
+    for i = 1 to n:
+        dp[i] = best_value_from_previous_states
+    return dp[n]
+            </pre>
+        </div>
+    </label>
 </section>
 
 <footer>© 2025 Aditya</footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".algo-btn").forEach(button => {
-        button.addEventListener("click", () => {
-            const box = button.nextElementSibling;
-            if (!box) return;
-
-            box.classList.toggle("open");
-
-            button.textContent = box.classList.contains("open")
-                ? "Hide Algorithm"
-                : "Show Algorithm";
-        });
-    });
-});
-</script>
 
 </body>
 </html>
