@@ -21,13 +21,12 @@
     <a href="about.html">About DAA</a>
 </nav>
 
+
 <!-- 1. DIJKSTRA -->
 <section class="card fade-in">
     <h2>1. Dijkstra’s Algorithm – Shortest Paths</h2>
     <p>
-        I used Dijkstra’s algorithm idea to represent how travel inside Serenia can be
-        optimized. This is mainly used for shortest path travel like ambulances,
-        emergency routing, and choosing the fastest route across different zones.
+        I used Dijkstra’s algorithm idea for shortest path travel inside Serenia.
     </p>
 
     <button class="algo-btn">Show Algorithm</button>
@@ -57,14 +56,11 @@ function dijkstra(graph, source):
     </div>
 </section>
 
+
 <!-- 2. BFS -->
 <section class="card fade-in delay-1">
     <h2>2. BFS – Utility and Service Reachability</h2>
-    <p>
-        BFS helps me check how effectively essential services spread across Serenia.
-        For example, water supply, garbage collection routes, and emergency response
-        coverage. BFS explores level by level which is perfect for city-wide coverage checks.
-    </p>
+    <p>BFS helps check service reachability across Serenia.</p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -85,13 +81,11 @@ function BFS(graph, start):
     </div>
 </section>
 
+
 <!-- 3. DFS -->
 <section class="card fade-in delay-2">
     <h2>3. DFS – Security and Monitoring</h2>
-    <p>
-        DFS helps represent deep-path exploration like surveillance camera scanning
-        or building inspection. It explores one full path deeply before moving to the next.
-    </p>
+    <p>DFS represents deep-path inspection and surveillance routes.</p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -105,14 +99,11 @@ function DFS(node):
     </div>
 </section>
 
+
 <!-- 4. MST -->
 <section class="card fade-in delay-3">
     <h2>4. Minimum Spanning Tree – Cost-Efficient Connections</h2>
-    <p>
-        MST helps reduce infrastructure cost in Serenia. It can represent wiring of
-        streetlights, connecting major hubs with minimum cable cost, or designing 
-        efficient networks.
-    </p>
+    <p>MST helps design minimum-cost wiring and connectivity.</p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -132,14 +123,11 @@ function kruskal(graph):
     </div>
 </section>
 
+
 <!-- 5. GREEDY -->
 <section class="card fade-in delay-4">
     <h2>5. Greedy Method – Fast Local Decisions</h2>
-    <p>
-        The greedy method fits many quick decision scenarios inside Serenia such as:
-        selecting the next waste collection point, deciding which road to patrol first,
-        or handling peak-hour quick decisions without complex calculations.
-    </p>
+    <p>Greedy logic is used for quick city decisions.</p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -157,15 +145,11 @@ function greedy(problem):
     </div>
 </section>
 
+
 <!-- 6. DIVIDE & CONQUER -->
 <section class="card fade-in delay-5">
     <h2>6. Divide & Conquer – Splitting the City into Zones</h2>
-    <p>
-        I applied divide-and-conquer thinking while designing Serenia.  
-        The city is split into regions like residential, commercial, tech park,
-        sports zone, government zone, etc.  
-        Each zone becomes a subproblem and then they are combined.
-    </p>
+    <p>Divide & conquer helps break Serenia into manageable zones.</p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -182,14 +166,11 @@ function divideAndConquer(problem):
     </div>
 </section>
 
+
 <!-- 7. DP -->
 <section class="card fade-in delay-6">
     <h2>7. Dynamic Programming – Resource Allocation</h2>
-    <p>
-        DP thinking helped me understand how to allocate limited resources like
-        hospital beds, emergency staff, or distributing materials efficiently.
-        Sorting and hashing support quick access to city records.
-    </p>
+    <p>DP helps with efficient resource distribution inside Serenia.</p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -208,7 +189,6 @@ function DP():
 
 <footer>© 2025 Aditya</footer>
 
-<!-- INLINE SCRIPT — MUST be at bottom -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".algo-btn").forEach(button => {
