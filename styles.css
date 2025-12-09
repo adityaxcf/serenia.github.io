@@ -53,17 +53,49 @@ section {
     transition: 0.35s;
     box-shadow: 0 12px 30px rgba(0,0,0,0.55);
 }
+
+/* FLOAT EFFECT */
 .card:hover {
     transform: translateY(-10px);
     border-color: #ffffffcc;
     box-shadow: 0 0 14px rgba(255,255,255,0.45), 0 0 24px rgba(255,255,255,0.3);
 }
 
+/* FIX: CENTER HOME PAGE PROJECT CARD */
+.card.center-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 650px;
+}
+
+/* TEXT */
+.card h2, .card h3 { margin: 0 0 16px; }
+.card p { font-size: 16px; line-height: 1.7; }
+.card ul { padding-left: 20px; line-height: 1.6; }
+
+/* FIXED IMAGE RESPONSIVENESS */
+.project-img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 22px auto;
+    border-radius: 12px;
+    border: 2px solid #2b2c34;
+    transition: transform 0.3s, border-color 0.3s;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
+
+.project-img:hover {
+    transform: scale(1.03);
+    border-color: #ffffffaa;
+}
+
 /* REMOVE DOT IN SUMMARY */
 summary { list-style: none; cursor: pointer; }
 summary::-webkit-details-marker { display: none; }
 
-/* DROPDOWN */
+/* DROPDOWN BUTTON */
 details summary {
     background: #ffffff10;
     padding: 10px 16px;
@@ -74,15 +106,10 @@ details summary {
     font-weight: 600;
     transition: 0.25s;
 }
-details summary:hover {
-    background: #ffffff20;
-    transform: translateY(-2px);
-}
+details summary:hover { background: #ffffff20; transform: translateY(-2px); }
+details[open] summary { background: #ffffff30; }
 
-details[open] summary {
-    background: #ffffff30;
-}
-
+/* DROPDOWN BOX */
 .algo-box {
     background: #111217;
     border: 1px solid #2b2c34;
@@ -93,8 +120,8 @@ details[open] summary {
 
 pre {
     white-space: pre-wrap;
-    color: white;
     font-size: 14px;
+    color: white;
 }
 
 /* FOOTER */
