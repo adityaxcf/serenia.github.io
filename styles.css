@@ -1,10 +1,10 @@
-/* GLOBAL SETTINGS */
+/* GLOBAL */
 html, body {
     margin: 0;
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #101114;
     color: #f5f5f5;
-    background: #101114; /* Solid premium dark-gray */
 }
 
 /* HEADER */
@@ -14,190 +14,95 @@ header {
     background: #16171b;
     border-bottom: 1px solid #262730;
 }
+header h1 { font-size: 28px; margin: 0; }
+header p { margin-top: 8px; color: #cdcdcd; }
 
-header h1 {
-    margin: 0;
-    font-size: 28px;
-    color: #ffffff;
-    letter-spacing: 0.06em;
-}
-
-header p {
-    margin-top: 8px;
-    font-size: 15px;
-    color: #cdcdcd;
-}
-
-/* NAVIGATION */
+/* NAV */
 nav {
     background: #16171b;
     padding: 12px 16px;
     display: flex;
     justify-content: center;
     gap: 14px;
-    flex-wrap: wrap;
     border-bottom: 1px solid #262730;
 }
-
 nav a {
     text-decoration: none;
     color: #e5e5e5;
-    font-size: 14px;
-    font-weight: 600;
     padding: 7px 16px;
     border-radius: 999px;
-    transition: background 0.25s ease, transform 0.25s ease;
+    font-weight: 600;
+    transition: 0.25s;
 }
+nav a:hover { background: #272830; color: white; }
 
-nav a:hover {
-    background: #272830;
-    color: white;
-    transform: translateY(-2px);
-}
-
-/* PAGE LAYOUT */
+/* PAGE */
 section {
     width: 92%;
     max-width: 900px;
     margin: 40px auto;
 }
 
-/* PREMIUM CARD DESIGN */
+/* CARD */
 .card {
-    position: relative;
     background: #1a1b20;
     border: 1px solid #2b2c34;
-    border-radius: 18px;
     padding: 26px;
     margin: 35px auto;
-    color: #f5f5f5;
-
-    transition: transform 0.35s ease,
-                box-shadow 0.35s ease,
-                border-color 0.35s ease;
-
+    border-radius: 18px;
+    transition: 0.35s;
     box-shadow: 0 12px 30px rgba(0,0,0,0.55);
 }
-
-/* FLOAT + NEON GLOW */
 .card:hover {
     transform: translateY(-10px);
     border-color: #ffffffcc;
-    box-shadow:
-        0 0 14px rgba(255,255,255,0.45),
-        0 0 24px rgba(255,255,255,0.30),
-        0 16px 40px rgba(0,0,0,0.75);
+    box-shadow: 0 0 14px rgba(255,255,255,0.45), 0 0 24px rgba(255,255,255,0.3);
 }
 
-.card.center-text {
-    text-align: center;
+/* REMOVE DOT IN SUMMARY */
+summary { list-style: none; cursor: pointer; }
+summary::-webkit-details-marker { display: none; }
+
+/* DROPDOWN */
+details summary {
+    background: #ffffff10;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #ffffff30;
+    display: inline-block;
+    margin-top: 14px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+details summary:hover {
+    background: #ffffff20;
+    transform: translateY(-2px);
 }
 
-/* TYPOGRAPHY */
-.card h2, 
-.card h3 {
-    margin: 0 0 16px;
-    color: #ffffff;
+details[open] summary {
+    background: #ffffff30;
 }
 
-.card p {
-    font-size: 16px;
-    line-height: 1.75;
-}
-
-.card ul {
-    padding-left: 22px;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-/* PROJECT IMAGES */
-.project-img {
-    width: 80%;
-    max-width: 760px;
-    display: block;
-    margin: 22px auto;
+.algo-box {
+    background: #111217;
+    border: 1px solid #2b2c34;
     border-radius: 12px;
-    border: 2px solid #2b2c34;
-
-    transition: transform 0.3s ease, border-color 0.3s ease;
-
-    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+    margin-top: 14px;
+    padding: 20px;
 }
 
-.project-img:hover {
-    transform: scale(1.04);
-    border-color: #ffffffaa;
+pre {
+    white-space: pre-wrap;
+    color: white;
+    font-size: 14px;
 }
 
 /* FOOTER */
 footer {
     margin-top: 40px;
-    background: #16171b;
     text-align: center;
-    padding: 14px 10px;
-    font-size: 13px;
+    padding: 14px;
+    background: #16171b;
     color: #b4b6c2;
     border-top: 1px solid #262730;
-}
-
-/* -----------------------------
-   PREMIUM DETAILS / SUMMARY DROPDOWN
------------------------------- */
-
-details.algo-drop {
-    margin-top: 14px;
-}
-
-details.algo-drop summary {
-    list-style: none;
-    display: inline-block;
-    cursor: pointer;
-    padding: 10px 16px;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.18);
-    background: rgba(255,255,255,0.04);
-    color: #fff;
-    font-weight: 600;
-    user-select: none;
-    transition: background 0.25s ease, transform 0.25s ease;
-}
-
-details.algo-drop summary:hover {
-    background: rgba(255,255,255,0.08);
-    transform: translateY(-2px);
-}
-
-details.algo-drop summary::-webkit-details-marker {
-    display: none;
-}
-
-details.algo-drop[open] summary {
-    background: rgba(255,255,255,0.10);
-}
-
-details.algo-drop summary::after {
-    content: "▾";
-    font-size: 12px;
-    margin-left: 10px;
-    opacity: 0.9;
-    transition: transform 0.25s ease;
-}
-
-details.algo-drop[open] summary::after {
-    transform: rotate(180deg);
-}
-
-/* CONTENT AREA OF ALGO DROP */
-details.algo-drop pre {
-    margin-top: 14px;
-    padding: 18px;
-    background: #0f1114;
-    border-radius: 12px;
-    border: 1px solid #2b2c34;
-    font-size: 14px;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    line-height: 1.6;
-    color: #e9eef6;
 }
