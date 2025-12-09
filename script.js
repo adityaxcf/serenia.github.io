@@ -1,11 +1,9 @@
-const buttons = document.querySelectorAll(".algo-btn");
-
-buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        const box = btn.nextElementSibling;
+document.querySelectorAll(".algo-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        const box = button.nextElementSibling;
         box.classList.toggle("open");
 
-        btn.textContent =
+        button.textContent = 
             box.classList.contains("open") ? "Hide Algorithm" : "Show Algorithm";
     });
 });
