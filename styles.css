@@ -198,3 +198,42 @@ footer {
     white-space: pre-wrap;
     color: #ffffff;
 }
+/* PURE CSS DROPDOWN SYSTEM */
+.algo-toggle {
+    display: block;
+    margin-top: 12px;
+}
+
+.algo-toggle input {
+    display: none;
+}
+
+.algo-toggle .algo-btn {
+    display: inline-block;
+    background: #ffffff10;
+    padding: 10px 16px;
+    border: 1px solid #ffffff30;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.algo-toggle input:checked + .algo-btn {
+    background: #ffffff30;
+}
+
+.algo-toggle .algo-box {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    background: #111217;
+    border: 1px solid #2b2c34;
+    border-radius: 12px;
+    margin-top: 14px;
+}
+
+.algo-toggle input:checked ~ .algo-box {
+    max-height: 500px;
+    padding-bottom: 10px;
+}
