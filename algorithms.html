@@ -4,9 +4,8 @@
     <title>Algorithms in Serenia City</title>
     <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
-
 <body>
 
 <header>
@@ -22,19 +21,27 @@
     <a href="about.html">About DAA</a>
 </nav>
 
-<!-- 1. DIJKSTRA -->
+
+<!-- --------------------------
+     1. DIJKSTRA'S ALGORITHM
+----------------------------- -->
 <section class="card fade-in">
     <h2>1. Dijkstra’s Algorithm – Smart Transportation & Emergency Response</h2>
+
     <p>
         In Serenia, the transportation network functions like a real smart-city business model.
-        Dijkstra’s algorithm is used as the core of the “Smart Routing Engine” that powers:
-        <ul>
-            <li>Fastest emergency routes for ambulances and fire vehicles</li>
-            <li>Dynamic re-routing during traffic congestion</li>
-            <li>Optimized public transport schedules</li>
-        </ul>
-        Adopting shortest-path logic reduces fuel and time costs, improves emergency response times,
-        and enables premium routing services (paid priority routing, SLA for emergency response).
+        Dijkstra’s algorithm powers the <strong>Smart Routing Engine</strong> that enables:
+    </p>
+
+    <ul>
+        <li>Fastest emergency routes for ambulances and fire vehicles</li>
+        <li>Dynamic re-routing during traffic congestion</li>
+        <li>Optimised public transport schedules</li>
+    </ul>
+
+    <p>
+        Adopting shortest-path logic reduces fuel/time costs, improves emergency response times,
+        and enables premium routing services (priority routing, SLA planning etc.).
     </p>
 
     <details class="algo-drop">
@@ -47,14 +54,15 @@ function dijkstra(graph, source):
     pq = priority queue
     pq.push(source, 0)
 
-    while pq not empty:
+    while pq is not empty:
         u = pq.pop()
-        if u in visited: continue
+        if u in visited:
+            continue
         visited.add(u)
 
-        for each v in neighbors(u):
+        for each neighbor v of u:
             w = weight(u, v)
-            if dist[u] + w &lt; dist[v]:
+            if dist[u] + w < dist[v]:
                 dist[v] = dist[u] + w
                 pq.push(v, dist[v])
 
@@ -63,64 +71,89 @@ function dijkstra(graph, source):
     </details>
 </section>
 
-<!-- 2. BFS -->
+
+<!-- --------------------------
+     2. BFS
+----------------------------- -->
 <section class="card fade-in delay-1">
     <h2>2. BFS – Utility Distribution & City-Wide Service Coverage</h2>
+
     <p>
-        BFS is used to design Serenia’s essential service distribution model.
-        It simulates how water, electricity, waste collection and public Wi-Fi propagate
-        across the city level-by-level ensuring even coverage.
-        Municipal utilities and ISPs use similar coverage planning to avoid gaps and optimize rollout costs.
+        BFS models Serenia’s <strong>essential service propagation</strong> system. It simulates how
+        water, electricity, waste collection, and public Wi-Fi expand level-by-level.
+        Municipal departments use BFS-style mapping to ensure:
     </p>
+
+    <ul>
+        <li>Every home receives electricity & water</li>
+        <li>Garbage routes cover all neighbourhoods</li>
+        <li>Emergency services can reach every zone</li>
+    </ul>
 
     <details class="algo-drop">
         <summary>Show Algorithm</summary>
         <pre>
 function BFS(graph, start):
-    visited = set()
+    visited = empty set
     queue = empty queue
     queue.enqueue(start)
     visited.add(start)
 
-    while queue not empty:
+    while queue is not empty:
         node = queue.dequeue()
-        for v in neighbors(node):
-            if v not in visited:
-                visited.add(v)
-                queue.enqueue(v)
+        for each neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.enqueue(neighbor)
         </pre>
     </details>
 </section>
 
-<!-- 3. DFS -->
+
+<!-- --------------------------
+     3. DFS
+----------------------------- -->
 <section class="card fade-in delay-2">
-    <h2>3. DFS – Security Scanning & Inspection Systems</h2>
+    <h2>3. DFS – Security, Surveillance & Monitoring</h2>
+
     <p>
-        DFS is applied for deep, sequential inspections: building interiors, CCTV route scans,
-        or infrastructure audits. Security and inspection firms use DFS-like traversals when a
-        thorough, path-by-path scan is required.
+        DFS models Serenia’s smart-security inspection system. It is used for:
     </p>
+
+    <ul>
+        <li>Deep scanning of CCTV camera paths</li>
+        <li>Building-wise security sweeps</li>
+        <li>Fire-escape and maintenance route checks</li>
+    </ul>
 
     <details class="algo-drop">
         <summary>Show Algorithm</summary>
         <pre>
 function DFS(node):
     visited.add(node)
-    for v in neighbors(node):
-        if v not in visited:
-            DFS(v)
+    for each neighbor in graph[node]:
+        if neighbor not in visited:
+            DFS(neighbor)
         </pre>
     </details>
 </section>
 
-<!-- 4. MST -->
+
+<!-- --------------------------
+     4. MST (KRUSKAL)
+----------------------------- -->
 <section class="card fade-in delay-3">
-    <h2>4. Minimum Spanning Tree – Cost-Optimized Infrastructure</h2>
+    <h2>4. Minimum Spanning Tree – Cost-Optimised Infrastructure Planning</h2>
+
     <p>
-        MST minimizes total connection length and cost for networks such as streetlights,
-        fiber cables, pipelines and microgrids. Telecom and utilities use MST logic to reduce
-        installation and maintenance costs while maintaining connectivity.
+        MST thinking helps Serenia save budget while building:
     </p>
+
+    <ul>
+        <li>Streetlight wiring networks</li>
+        <li>Electrical grid connections</li>
+        <li>Underground fibre-optic and utility pipelines</li>
+    </ul>
 
     <details class="algo-drop">
         <summary>Show Algorithm</summary>
@@ -128,9 +161,9 @@ function DFS(node):
 function kruskal(graph):
     mst = empty set
     sort edges by weight
-    create DSU
+    create disjoint set DSU
 
-    for each (u, v, w) in edges:
+    for each edge (u, v, w):
         if find(u) != find(v):
             union(u, v)
             mst.add((u, v, w))
@@ -140,36 +173,49 @@ function kruskal(graph):
     </details>
 </section>
 
-<!-- 5. GREEDY -->
+
+<!-- --------------------------
+     5. GREEDY
+----------------------------- -->
 <section class="card fade-in delay-4">
-    <h2>5. Greedy Strategy – Daily Operational Optimization</h2>
+    <h2>5. Greedy Strategy – Quick City-Level Decision Making</h2>
+
     <p>
-        Greedy methods support quick decisions in logistics and operations: next garbage pickup,
-        short-term resource allocation, or simple scheduling. They’re useful when fast, local-optimal
-        choices give good practical results with minimal compute overhead.
+        Serenia uses greedy logic for fast local decisions without heavy computation:
     </p>
+
+    <ul>
+        <li>Choosing next garbage pickup point</li>
+        <li>Assigning police patrolling routes</li>
+        <li>Load balancing during peak hours</li>
+    </ul>
 
     <details class="algo-drop">
         <summary>Show Algorithm</summary>
         <pre>
 function greedy(problem):
     solution = empty set
-    while not done:
-        choice = best_local_choice()
+
+    while not finished(problem):
+        choice = best_local_choice(problem)
         solution.add(choice)
         update(problem, choice)
+
     return solution
         </pre>
     </details>
 </section>
 
-<!-- 6. DIVIDE & CONQUER -->
+
+<!-- --------------------------
+     6. DIVIDE & CONQUER
+----------------------------- -->
 <section class="card fade-in delay-5">
-    <h2>6. Divide & Conquer – Smart Zoning for Scalable Growth</h2>
+    <h2>6. Divide & Conquer – Zonal Planning & Management</h2>
+
     <p>
-        Divide & Conquer is the planning backbone: split the city into manageable zones,
-        solve each zone’s plan independently, then combine. This approach helps planners and
-        investors scale Serenia in stages and measure ROI per zone.
+        Serenia is divided into smaller sub-regions (residential, commercial, tech-park,
+        government zone etc.). Each zone is treated as a subproblem.
     </p>
 
     <details class="algo-drop">
@@ -177,36 +223,49 @@ function greedy(problem):
         <pre>
 function divideAndConquer(problem):
     if small(problem):
-        return direct_solution
+        return direct_solution(problem)
+
     left, right = split(problem)
     L = divideAndConquer(left)
     R = divideAndConquer(right)
+
     return combine(L, R)
         </pre>
     </details>
 </section>
 
-<!-- 7. DP -->
+
+<!-- --------------------------
+     7. DP
+----------------------------- -->
 <section class="card fade-in delay-6">
-    <h2>7. Dynamic Programming – Hospital & Resource Allocation Model</h2>
+    <h2>7. Dynamic Programming – Resource Allocation</h2>
+
     <p>
-        DP is used for scheduling, allocation and forecasting: assigning beds and staff,
-        predicting demand spikes, and optimizing budgets. Large hospitals and emergency systems
-        use DP-like planning to improve utilization and reduce downtime.
+        DP supports Serenia’s healthcare & emergency resource planning:
     </p>
+
+    <ul>
+        <li>Optimal hospital bed allocation</li>
+        <li>Staff scheduling</li>
+        <li>Inventory distribution</li>
+    </ul>
 
     <details class="algo-drop">
         <summary>Show Algorithm</summary>
         <pre>
 function DP():
-    dp = array of size n
-    initialize dp
-    for i = 1 to n:
-        dp[i] = best_value_from_previous_states
-    return dp[n]
+    dp = array
+    initialise dp
+
+    for i from start to end:
+        dp[i] = best value from previous states
+
+    return dp[end]
         </pre>
     </details>
 </section>
+
 
 <footer>© 2025 Aditya</footer>
 
