@@ -19,9 +19,15 @@
     <a href="about.html">About DAA</a>
 </nav>
 
+
+<!-- 1. DIJKSTRA -->
 <section class="card fade-in">
     <h2>1. Dijkstra’s Algorithm – Shortest Paths</h2>
-    <p>Dijkstra helps compute optimal routes inside Serenia for travel and emergency response.</p>
+    <p>
+        I used Dijkstra’s algorithm idea to represent how travel inside Serenia can be
+        optimized. This is mainly used for shortest path travel like ambulances,
+        emergency routing, and choosing the fastest route across different zones.
+    </p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -50,9 +56,15 @@ function dijkstra(graph, source):
     </div>
 </section>
 
+
+<!-- 2. BFS -->
 <section class="card fade-in delay-1">
-    <h2>2. BFS – Utility Reachability</h2>
-    <p>BFS models how services like water and waste collection reach each zone.</p>
+    <h2>2. BFS – Utility and Service Reachability</h2>
+    <p>
+        BFS helps me check how effectively essential services spread across Serenia.
+        For example, water supply, garbage collection routes, and emergency response
+        coverage. BFS explores level by level which is perfect for city-wide coverage checks.
+    </p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -73,9 +85,14 @@ function BFS(graph, start):
     </div>
 </section>
 
+
+<!-- 3. DFS -->
 <section class="card fade-in delay-2">
-    <h2>3. DFS – Security Checks</h2>
-    <p>DFS simulates how deep security or inspection routes are covered.</p>
+    <h2>3. DFS – Security and Monitoring</h2>
+    <p>
+        DFS helps represent deep-path exploration like surveillance camera scanning
+        or building inspection. It explores one full path deeply before moving to the next.
+    </p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -89,9 +106,15 @@ function DFS(node):
     </div>
 </section>
 
+
+<!-- 4. MST -->
 <section class="card fade-in delay-3">
-    <h2>4. Minimum Spanning Tree (Kruskal)</h2>
-    <p>MST reduces wiring cost between important city nodes.</p>
+    <h2>4. Minimum Spanning Tree – Cost-Efficient Connections</h2>
+    <p>
+        MST helps reduce infrastructure cost in Serenia. It can represent wiring of
+        streetlights, connecting major hubs with minimum cable cost, or designing 
+        efficient networks.
+    </p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -111,9 +134,15 @@ function kruskal(graph):
     </div>
 </section>
 
+
+<!-- 5. GREEDY -->
 <section class="card fade-in delay-4">
-    <h2>5. Greedy Method</h2>
-    <p>Used for fast decisions like garbage pickup or patrol routing.</p>
+    <h2>5. Greedy Method – Fast Local Decisions</h2>
+    <p>
+        The greedy method fits many quick decision scenarios inside Serenia such as:
+        selecting the next waste collection point, deciding which road to patrol first,
+        or handling peak-hour quick decisions without complex calculations.
+    </p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -131,9 +160,16 @@ function greedy(problem):
     </div>
 </section>
 
+
+<!-- 6. DIVIDE & CONQUER -->
 <section class="card fade-in delay-5">
-    <h2>6. Divide & Conquer</h2>
-    <p>Used to divide serenia into subzones for easier planning.</p>
+    <h2>6. Divide & Conquer – Splitting the City into Zones</h2>
+    <p>
+        I applied divide-and-conquer thinking while designing Serenia.  
+        The city is split into regions like residential, commercial, tech park,
+        sports zone, government zone, etc.  
+        Each zone becomes a subproblem and then they are combined.
+    </p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -150,9 +186,15 @@ function divideAndConquer(problem):
     </div>
 </section>
 
+
+<!-- 7. DP -->
 <section class="card fade-in delay-6">
-    <h2>7. Dynamic Programming & Hashing</h2>
-    <p>Used for resource allocation, record sorting, and fast lookup.</p>
+    <h2>7. Dynamic Programming – Resource Allocation</h2>
+    <p>
+        DP thinking helped me understand how to allocate limited resources like
+        hospital beds, emergency staff, or distributing materials efficiently.
+        Sorting and hashing support quick access to city records.
+    </p>
 
     <button class="algo-btn">Show Algorithm</button>
     <div class="algo-box">
@@ -169,10 +211,21 @@ function DP():
     </div>
 </section>
 
+
 <footer>© 2025 Aditya</footer>
 
-<!-- SCRIPT FOR DROPDOWN -->
-<script src="script.js?v=50"></script>
+<!-- INLINE SCRIPT (NO NEED FOR script.js) -->
+<script>
+document.querySelectorAll(".algo-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        const box = button.nextElementSibling;
+        box.classList.toggle("open");
+
+        button.textContent =
+            box.classList.contains("open") ? "Hide Algorithm" : "Show Algorithm";
+    });
+});
+</script>
 
 </body>
 </html>
