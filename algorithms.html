@@ -10,7 +10,7 @@
 
 <header>
     <h1>Algorithms Used in Serenia</h1>
-    <p>Real-world, business-oriented applications inside a smart city model</p>
+    <p>Medium-detailed explanations of how each algorithm fits into a smart city</p>
 </header>
 
 <nav>
@@ -21,35 +21,37 @@
     <a href="about.html">About DAA</a>
 </nav>
 
+
 <!-- 1. DIJKSTRA -->
 <section class="card">
-    <h2>1. Dijkstra’s Algorithm – Smart Transportation & Emergency Response</h2>
-    <p>Dijkstra’s algorithm powers Serenia’s routing engine. It enables:</p>
-    <ul>
-        <li>Fastest routes for ambulances & fire vehicles</li>
-        <li>Dynamic re-routing during congestion</li>
-        <li>Optimized public transport schedules</li>
-    </ul>
+    <h2>1. Dijkstra’s Algorithm: Transportation and Emergency Movement</h2>
+
+    <p>
+        Serenia uses the idea of Dijkstra’s algorithm to plan how vehicles move across the city.
+        It helps estimate which route is the fastest based on distance, junctions and road conditions.
+        This becomes especially useful for emergency vehicles like ambulances or fire engines, where
+        choosing the quickest possible route can make a major difference. Even everyday transport inside
+        the city benefits because the algorithm reduces unnecessary travel time and helps avoid slower paths.
+        It basically acts like a simple navigation system that always tries to find the most efficient path
+        between two points in the city.
+    </p>
 
     <details class="algo-drop">
-        <summary>Show Algorithm ▼</summary>
+        <summary>Show Algorithm</summary>
         <div class="algo-box">
 <pre>
 function dijkstra(graph, source):
-    dist = array of infinity
+    dist = infinity array
     dist[source] = 0
-    visited = empty set
     pq = priority queue
     pq.push(source, 0)
 
     while pq not empty:
         u = pq.pop()
-        if u in visited: continue
-        visited.add(u)
-
         for each v in neighbors(u):
-            if dist[u] + w(u,v) < dist[v]:
-                dist[v] = dist[u] + w(u,v)
+            w = weight(u, v)
+            if dist[u] + w < dist[v]:
+                dist[v] = dist[u] + w
                 pq.push(v, dist[v])
 
     return dist
@@ -58,18 +60,22 @@ function dijkstra(graph, source):
     </details>
 </section>
 
+
 <!-- 2. BFS -->
 <section class="card">
-    <h2>2. BFS – Utility Distribution & City-Wide Service Coverage</h2>
-    <p>BFS models how essential services spread across the city, ensuring:</p>
-    <ul>
-        <li>Full water and electricity reach</li>
-        <li>Optimized garbage collection routes</li>
-        <li>Emergency service accessibility</li>
-    </ul>
+    <h2>2. BFS: Utility Spread and Service Reachability</h2>
+
+    <p>
+        BFS helps check how well essential services reach every part of Serenia. Since BFS moves level by
+        level, it matches real situations where utilities expand outward from a central point. This is used
+        to understand how water supply, electricity, garbage collection and even internet coverage might reach
+        different neighbourhoods. If a certain zone cannot be reached in the BFS simulation, it usually means
+        that the city needs to fix missing links or improve service access there. It gives a simple but clear
+        picture of how connected the city really is.
+    </p>
 
     <details class="algo-drop">
-        <summary>Show Algorithm ▼</summary>
+        <summary>Show Algorithm</summary>
         <div class="algo-box">
 <pre>
 function BFS(graph, start):
@@ -79,7 +85,7 @@ function BFS(graph, start):
 
     while queue not empty:
         node = queue.pop(0)
-        for each neighbor in graph[node]:
+        for neighbor in graph[node]:
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.append(neighbor)
@@ -88,23 +94,27 @@ function BFS(graph, start):
     </details>
 </section>
 
+
 <!-- 3. DFS -->
 <section class="card">
-    <h2>3. DFS – Security & Facility Monitoring</h2>
-    <p>DFS simulates deep-path inspections inside Serenia:</p>
-    <ul>
-        <li>CCTV route scanning</li>
-        <li>Building inspection paths</li>
-        <li>Maintenance route planning</li>
-    </ul>
+    <h2>3. DFS: Security Checks and Internal Exploration</h2>
+
+    <p>
+        DFS is used in Serenia to represent tasks that require deep exploration before moving on.
+        This fits scenarios like building inspections, checking every corridor inside a complex,
+        or scanning CCTV routes in a fixed order. DFS explores one full path at a time which makes
+        it useful for internal checks where nothing should be skipped. It also helps simulate how
+        emergency teams might search buildings or restricted areas by following one route completely
+        before switching to another.
+    </p>
 
     <details class="algo-drop">
-        <summary>Show Algorithm ▼</summary>
+        <summary>Show Algorithm</summary>
         <div class="algo-box">
 <pre>
 function DFS(node):
     visited.add(node)
-    for each neighbor in graph[node]:
+    for neighbor in graph[node]:
         if neighbor not in visited:
             DFS(neighbor)
 </pre>
@@ -112,29 +122,33 @@ function DFS(node):
     </details>
 </section>
 
+
 <!-- 4. MST -->
 <section class="card">
-    <h2>4. Minimum Spanning Tree – Cost-Efficient Infrastructure Planning</h2>
-    <p>MST reduces city infrastructure cost by optimising networks:</p>
-    <ul>
-        <li>Streetlight wiring networks</li>
-        <li>Power line distribution</li>
-        <li>Fiber-optic layout planning</li>
-    </ul>
+    <h2>4. Minimum Spanning Tree: Cost-Friendly City Connections</h2>
+
+    <p>
+        MST ideas help Serenia reduce construction cost when connecting multiple locations.
+        Whenever the city needs to lay out streetlights, power lines, underground cables
+        or communication wires, MST helps design the layout so that every area is connected
+        while using the minimum amount of material. This naturally lowers installation cost
+        and future maintenance effort. It also gives planners a simple way to decide which
+        connections are necessary and which ones are extra or inefficient.
+    </p>
 
     <details class="algo-drop">
-        <summary>Show Algorithm ▼</summary>
+        <summary>Show Algorithm</summary>
         <div class="algo-box">
 <pre>
 function kruskal(graph):
-    mst = set()
     sort edges by weight
     DSU = disjoint set
+    mst = []
 
-    for each (u, v, w) in edges:
+    for (u, v, w) in edges:
         if find(u) != find(v):
             union(u, v)
-            mst.add((u, v, w))
+            mst.append((u, v, w))
 
     return mst
 </pre>
@@ -142,46 +156,52 @@ function kruskal(graph):
     </details>
 </section>
 
+
 <!-- 5. GREEDY -->
 <section class="card">
-    <h2>5. Greedy Method – Fast Local Decision Making</h2>
-    <p>Greedy logic is used inside Serenia for:</p>
-    <ul>
-        <li>Next garbage pickup selection</li>
-        <li>Road patrol prioritization</li>
-        <li>Peak-hour adaptive decisions</li>
-    </ul>
+    <h2>5. Greedy Method: Quick Local Decisions</h2>
+
+    <p>
+        Serenia uses the greedy approach in areas where fast and practical decisions are more
+        useful than perfect long-term solutions. This includes choosing which garbage pickup
+        point to visit next, assigning traffic police to the nearest busy road or selecting a
+        maintenance task that should be handled first. The greedy method works well here because
+        it focuses on the best available option at that moment, allowing the city to respond
+        quickly without trying to compute every possible outcome.
+    </p>
 
     <details class="algo-drop">
-        <summary>Show Algorithm ▼</summary>
+        <summary>Show Algorithm</summary>
         <div class="algo-box">
 <pre>
 function greedy(problem):
     solution = []
-
-    while not done(problem):
-        choice = best_local_choice(problem)
-        solution.add(choice)
-        update(problem, choice)
-
+    while not finished(problem):
+        best = best_local_choice(problem)
+        solution.append(best)
+        update(problem, best)
     return solution
 </pre>
         </div>
     </details>
 </section>
 
+
 <!-- 6. DIVIDE & CONQUER -->
 <section class="card">
-    <h2>6. Divide & Conquer – Modular City Zoning Strategy</h2>
-    <p>Serenia is divided into sub-regions for easier planning:</p>
-    <ul>
-        <li>Residential & commercial division</li>
-        <li>Traffic load balancing</li>
-        <li>Independent zone management</li>
-    </ul>
+    <h2>6. Divide and Conquer: Zonal Planning and City Structure</h2>
+
+    <p>
+        When designing Serenia, the city was split into smaller zones like residential blocks,
+        commercial areas, government zones and green spaces. Each smaller part is easier to
+        design, analyse and manage. This mirrors the divide-and-conquer idea where a big
+        problem is broken into simpler sections that are solved one at a time and then combined.
+        This approach makes expansion easier because new zones can be added without disturbing
+        the rest of the city layout.
+    </p>
 
     <details class="algo-drop">
-        <summary>Show Algorithm ▼</summary>
+        <summary>Show Algorithm</summary>
         <div class="algo-box">
 <pre>
 function divideAndConquer(problem):
@@ -189,39 +209,45 @@ function divideAndConquer(problem):
         return solve(problem)
 
     left, right = split(problem)
-    L = divideAndConquer(left)
-    R = divideAndConquer(right)
-    return combine(L, R)
+    a = divideAndConquer(left)
+    b = divideAndConquer(right)
+    return combine(a, b)
 </pre>
         </div>
     </details>
 </section>
 
+
 <!-- 7. DP -->
 <section class="card">
-    <h2>7. Dynamic Programming – Resource Allocation Optimization</h2>
-    <p>DP helps efficiently manage city-wide resources:</p>
-    <ul>
-        <li>Hospital bed allocation</li>
-        <li>Staff scheduling</li>
-        <li>Supply chain optimization</li>
-    </ul>
+    <h2>7. Dynamic Programming: Resource Planning and Allocation</h2>
+
+    <p>
+        Serenia often deals with limited resources such as hospital beds, emergency vehicles,
+        repair teams or funding for maintenance. DP helps in these situations by breaking the
+        allocation problem into stages and choosing the best option at each step without wasting
+        resources. This ensures that future decisions remain flexible while still maintaining
+        efficiency. DP concepts fit well into scheduling tasks, distributing staff and balancing
+        workload across different parts of the city.
+    </p>
 
     <details class="algo-drop">
-        <summary>Show Algorithm ▼</summary>
+        <summary>Show Algorithm</summary>
         <div class="algo-box">
 <pre>
 function DP():
     dp = array
+    initialize dp
 
-    for i in range(n):
-        dp[i] = best_from_previous_states(i)
+    for i in range:
+        dp[i] = best value using previous states
 
-    return dp[n-1]
+    return dp[end]
 </pre>
         </div>
     </details>
 </section>
+
 
 <footer>© 2025 Aditya</footer>
 
