@@ -1,16 +1,18 @@
+/* GLOBAL SETTINGS */
 html, body {
     margin: 0;
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     color: #f5f5f5;
-    background: #121316; /* Solid premium dark gray */
+    background: #101114; /* Solid premium dark-gray */
 }
 
+/* HEADER */
 header {
     text-align: center;
-    padding: 32px 16px 22px;
-    background: #18191d;
-    border-bottom: 1px solid #2a2b30;
+    padding: 34px 16px 26px;
+    background: #16171b;
+    border-bottom: 1px solid #262730;
 }
 
 header h1 {
@@ -23,84 +25,136 @@ header h1 {
 header p {
     margin-top: 8px;
     font-size: 15px;
-    color: #cccccc;
+    color: #cdcdcd;
 }
 
+/* NAVIGATION */
 nav {
-    background: #18191d;
-    padding: 10px 12px;
+    background: #16171b;
+    padding: 12px 16px;
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 14px;
     flex-wrap: wrap;
-    border-bottom: 1px solid #2a2b30;
+    border-bottom: 1px solid #262730;
 }
 
 nav a {
     text-decoration: none;
-    color: #e0e0e0;
+    color: #e5e5e5;
     font-size: 14px;
     font-weight: 600;
-    padding: 6px 14px;
+    padding: 7px 16px;
     border-radius: 999px;
-    transition: 0.2s ease;
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
 nav a:hover {
-    background: #2a2b30;
-    color: #ffffff;
+    background: #272830;
+    color: white;
+    transform: translateY(-2px);
 }
 
+/* PAGE LAYOUT */
 section {
     width: 92%;
     max-width: 900px;
-    margin: 32px auto;
+    margin: 40px auto;
 }
 
-/* CARD */
+/* CARD BASE DESIGN */
 .card {
-    background: #1a1b1f;
-    border: 1px solid #2e2f35;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
-    margin-bottom: 26px;
+    position: relative;
+    background: #1a1b20;
+    border: 1px solid #2b2c34;
+    border-radius: 18px;
+    padding: 26px;
+    margin: 35px auto;
     color: #f5f5f5;
+
+    /* Floating + smooth transition */
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.55);
 }
 
-.card.center-text {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+/* NEON FLOAT EFFECT */
+.card:hover {
+    transform: translateY(-10px);
+
+    border-color: #ffffffcc;
+
+    box-shadow:
+        0 0 14px rgba(255,255,255,0.45),
+        0 0 24px rgba(255,255,255,0.30),
+        0 16px 40px rgba(0,0,0,0.75);
 }
 
-.card h2, .card h3 {
-    margin: 0 0 12px;
+/* EXTRA GLOW LAYER */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* TYPOGRAPHY */
+.card h2, 
+.card h3 {
+    margin: 0 0 16px;
+    color: #ffffff;
 }
 
 .card p {
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
-/* IMAGE STYLING */
+.card ul {
+    padding-left: 22px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.card.center-text {
+    text-align: center;
+}
+
+/* IMAGES IN CARDS */
 .project-img {
     width: 80%;
     max-width: 760px;
     display: block;
     margin: 22px auto;
     border-radius: 12px;
-    border: 2px solid #2e2f35;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    border: 2px solid #2b2c34;
+
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
+
+.project-img:hover {
+    transform: scale(1.04);
+    border-color: #ffffffaa;
 }
 
 /* FOOTER */
 footer {
     margin-top: 40px;
-    background: #18191d;
+    background: #16171b;
     text-align: center;
     padding: 14px 10px;
     font-size: 13px;
-    color: #bbbbbb;
-    border-top: 1px solid #2a2b30;
+    color: #b4b6c2;
+    border-top: 1px solid #262730;
 }
