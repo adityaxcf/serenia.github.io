@@ -19,103 +19,183 @@
     <a href="about.html">About DAA</a>
 </nav>
 
+
+<!-- 1. Dijkstra -->
 <section class="card fade-in">
     <h2>1. Dijkstra’s Algorithm – Shortest Paths</h2>
     <p>
-        In Serenia, I used the idea of Dijkstra’s algorithm to represent how vehicles
-        would move between important places using the shortest or fastest route.
-        This fits real situations like navigation, ambulance routing and emergency travel.
+        I used Dijkstra’s idea for shortest path travel between important areas of Serenia.
+        It represents how emergency vehicles or daily travel routes can be optimized.
     </p>
-    <ul>
-        <li>Finding the quickest path to the hospital.</li>
-        <li>Routing between residential and commercial zones.</li>
-        <li>Reducing overall travel time in the city network.</li>
-    </ul>
+
+    <button class="algo-btn">Show Algorithm</button>
+
+    <div class="algo-box">
+        <pre>
+function dijkstra(graph, source):
+    dist = array of infinity
+    dist[source] = 0
+    visited = empty set
+    pq = priority queue
+    pq.push(source, 0)
+
+    while pq is not empty:
+        u = pq.pop()
+        if u in visited:
+            continue
+        visited.add(u)
+
+        for each neighbor v of u:
+            w = weight(u, v)
+            if dist[u] + w < dist[v]:
+                dist[v] = dist[u] + w
+                pq.push(v, dist[v])
+
+    return dist
+        </pre>
+    </div>
 </section>
 
+
+<!-- 2. BFS -->
 <section class="card fade-in delay-1">
     <h2>2. BFS – Utility and Service Reachability</h2>
-    <p>
-        Breadth-First Search is useful to explore how well different parts of the city
-        are connected in terms of basic services. Since BFS works level by level, it
-        helps ensure that every zone is reachable.
-    </p>
-    <ul>
-        <li>Tracing how water supply reaches different areas.</li>
-        <li>Planning waste collection coverage.</li>
-        <li>Checking if all regions get basic services.</li>
-    </ul>
+    <p>BFS helped me check how services spread across the city zone-by-zone.</p>
+
+    <button class="algo-btn">Show Algorithm</button>
+
+    <div class="algo-box">
+        <pre>
+function BFS(graph, start):
+    visited = empty set
+    queue = empty queue
+    queue.enqueue(start)
+    visited.add(start)
+
+    while queue is not empty:
+        node = queue.dequeue()
+        for each neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.enqueue(neighbor)
+        </pre>
+    </div>
 </section>
 
+
+<!-- 3. DFS -->
 <section class="card fade-in delay-2">
-    <h2>3. DFS – Security and Monitoring</h2>
-    <p>
-        DFS explores one path deeply before moving to another. I used this idea for
-        representing security checks and monitoring routes in some regions of Serenia.
-    </p>
-    <ul>
-        <li>Scanning CCTV routes in public spaces.</li>
-        <li>Exploring building-wise security checks.</li>
-        <li>Inspecting internal paths or escape routes.</li>
-    </ul>
+    <h2>3. DFS – Security & Monitoring</h2>
+    <p>DFS helped model deep-path exploration like surveillance or inspection routes.</p>
+
+    <button class="algo-btn">Show Algorithm</button>
+
+    <div class="algo-box">
+        <pre>
+function DFS(node):
+    visited.add(node)
+    for each neighbor in graph[node]:
+        if neighbor not in visited:
+            DFS(neighbor)
+        </pre>
+    </div>
 </section>
 
+
+<!-- 4. Kruskal (MST) -->
 <section class="card fade-in delay-3">
-    <h2>4. Minimum Spanning Tree – Cost-Effective Connections</h2>
-    <p>
-        MST concepts helped me think about how to connect different locations in the city
-        using minimum cost. This is useful when planning wiring and long connections.
-    </p>
-    <ul>
-        <li>Connecting streetlights along the roads.</li>
-        <li>Laying power lines between zones.</li>
-        <li>Reducing the total length of connections.</li>
-    </ul>
+    <h2>4. Minimum Spanning Tree – Cost-effective Networking</h2>
+    <p>MST concepts helped reduce wiring cost and overall connection distance.</p>
+
+    <button class="algo-btn">Show Algorithm</button>
+
+    <div class="algo-box">
+        <pre>
+function kruskal(graph):
+    mst = empty set
+    sort edges by weight
+    create disjoint set DSU
+
+    for each edge (u, v, w):
+        if find(u) != find(v):
+            union(u, v)
+            mst.add((u, v, w))
+
+    return mst
+        </pre>
+    </div>
 </section>
 
+
+<!-- 5. Greedy -->
 <section class="card fade-in delay-4">
-    <h2>5. Greedy Approach – Quick Local Decisions</h2>
-    <p>
-        A greedy approach takes the best local choice at each step. I related this idea
-        to cases where fast decisions are needed in the city without doing heavy
-        calculations every time.
-    </p>
-    <ul>
-        <li>Choosing the next dustbin or area for garbage pickup.</li>
-        <li>Deciding patrolling routes for important roads.</li>
-        <li>Handling simple decisions during peak hours.</li>
-    </ul>
+    <h2>5. Greedy Approach – Fast Local Decisions</h2>
+    <p>Used for tasks like fast garbage pickup decisions or patrolling priorities.</p>
+
+    <button class="algo-btn">Show Algorithm</button>
+
+    <div class="algo-box">
+        <pre>
+function greedy(problem):
+    solution = empty set
+
+    while not finished(problem):
+        choice = best_local_choice(problem)
+        solution.add(choice)
+        update(problem, choice)
+
+    return solution
+        </pre>
+    </div>
 </section>
 
+
+<!-- 6. Divide & Conquer -->
 <section class="card fade-in delay-5">
-    <h2>6. Divide & Conquer – Splitting the City into Zones</h2>
-    <p>
-        I applied the basic idea of divide and conquer by splitting the city into
-        smaller zones such as residential, commercial, tech park and green belt.
-        Each zone can be thought of as a subproblem.
-    </p>
-    <ul>
-        <li>Planning one region at a time.</li>
-        <li>Managing traffic inside each zone separately.</li>
-        <li>Reducing the complexity of overall city design.</li>
-    </ul>
+    <h2>6. Divide & Conquer – Splitting the City</h2>
+    <p>Used when dividing Serenia into smaller zones for detailed planning.</p>
+
+    <button class="algo-btn">Show Algorithm</button>
+
+    <div class="algo-box">
+        <pre>
+function divideAndConquer(problem):
+    if size(problem) is small:
+        return direct_solution(problem)
+
+    left, right = split(problem)
+    leftAns = divideAndConquer(left)
+    rightAns = divideAndConquer(right)
+    return combine(leftAns, rightAns)
+        </pre>
+    </div>
 </section>
 
+
+<!-- 7. Dynamic Programming -->
 <section class="card fade-in delay-6">
-    <h2>7. Dynamic Programming, Sorting and Hashing</h2>
-    <p>
-        Dynamic Programming was used in my thinking for resource allocation, especially
-        in hospital and emergency cases. Sorting and hashing ideas were linked to how
-        city data and records can be stored neatly and accessed quickly.
-    </p>
-    <ul>
-        <li>Allocating beds and staff based on demand.</li>
-        <li>Sorting records like properties or vendors.</li>
-        <li>Fast lookups using hashing for IDs or vehicles.</li>
-    </ul>
+    <h2>7. Dynamic Programming, Sorting & Hashing</h2>
+    <p>Useful for resource allocation, records organization, and fast lookups.</p>
+
+    <button class="algo-btn">Show Algorithm</button>
+
+    <div class="algo-box">
+        <pre>
+function DP():
+    dp = array
+    initialize dp
+
+    for i from start to end:
+        dp[i] = best value from previous states
+
+    return dp[end]
+        </pre>
+    </div>
 </section>
+
 
 <footer>© 2025 Aditya</footer>
 
+<script src="script.js"></script>
 </body>
 </html>
