@@ -62,7 +62,7 @@ section {
     margin: 40px auto;
 }
 
-/* CARD BASE DESIGN */
+/* PREMIUM CARD DESIGN */
 .card {
     position: relative;
     background: #1a1b20;
@@ -72,7 +72,6 @@ section {
     margin: 35px auto;
     color: #f5f5f5;
 
-    /* Floating + smooth transition */
     transition: transform 0.35s ease,
                 box-shadow 0.35s ease,
                 border-color 0.35s ease;
@@ -80,7 +79,7 @@ section {
     box-shadow: 0 12px 30px rgba(0,0,0,0.55);
 }
 
-/* NEON FLOAT EFFECT */
+/* FLOAT + NEON WHITE GLOW */
 .card:hover {
     transform: translateY(-10px);
 
@@ -92,7 +91,6 @@ section {
         0 16px 40px rgba(0,0,0,0.75);
 }
 
-/* EXTRA GLOW LAYER */
 .card::before {
     content: "";
     position: absolute;
@@ -105,6 +103,10 @@ section {
 
 .card:hover::before {
     opacity: 1;
+}
+
+.card.center-text {
+    text-align: center;
 }
 
 /* TYPOGRAPHY */
@@ -125,11 +127,7 @@ section {
     line-height: 1.6;
 }
 
-.card.center-text {
-    text-align: center;
-}
-
-/* IMAGES IN CARDS */
+/* PROJECT IMAGES */
 .project-img {
     width: 80%;
     max-width: 760px;
@@ -157,4 +155,46 @@ footer {
     font-size: 13px;
     color: #b4b6c2;
     border-top: 1px solid #262730;
+}
+
+/* -----------------------------
+   ALGO DROPDOWN BUTTON + BOX
+------------------------------ */
+.algo-btn {
+    background: #ffffff10;
+    color: #ffffff;
+    border: 1px solid #ffffff30;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s ease;
+    margin-top: 10px;
+}
+
+.algo-btn:hover {
+    background: #ffffff20;
+    transform: translateY(-2px);
+}
+
+/* DROPDOWN BOX */
+.algo-box {
+    max-height: 0;
+    overflow: hidden;
+    background: #111217;
+    border: 1px solid #2b2c34;
+    border-radius: 12px;
+    margin-top: 14px;
+    transition: max-height 0.35s ease;
+}
+
+.algo-box.open {
+    max-height: 500px;
+}
+
+.algo-box pre {
+    padding: 20px;
+    font-size: 14px;
+    white-space: pre-wrap;
+    color: #ffffff;
 }
