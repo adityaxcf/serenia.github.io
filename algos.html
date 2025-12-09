@@ -3,6 +3,8 @@
 <head>
     <title>Algorithms in Serenia City</title>
     <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
 
@@ -18,7 +20,6 @@
     <a href="algos.html">Algorithms</a>
     <a href="about.html">About DAA</a>
 </nav>
-
 
 <!-- 1. DIJKSTRA -->
 <section class="card fade-in">
@@ -56,7 +57,6 @@ function dijkstra(graph, source):
     </div>
 </section>
 
-
 <!-- 2. BFS -->
 <section class="card fade-in delay-1">
     <h2>2. BFS – Utility and Service Reachability</h2>
@@ -85,7 +85,6 @@ function BFS(graph, start):
     </div>
 </section>
 
-
 <!-- 3. DFS -->
 <section class="card fade-in delay-2">
     <h2>3. DFS – Security and Monitoring</h2>
@@ -105,7 +104,6 @@ function DFS(node):
         </pre>
     </div>
 </section>
-
 
 <!-- 4. MST -->
 <section class="card fade-in delay-3">
@@ -134,7 +132,6 @@ function kruskal(graph):
     </div>
 </section>
 
-
 <!-- 5. GREEDY -->
 <section class="card fade-in delay-4">
     <h2>5. Greedy Method – Fast Local Decisions</h2>
@@ -159,7 +156,6 @@ function greedy(problem):
         </pre>
     </div>
 </section>
-
 
 <!-- 6. DIVIDE & CONQUER -->
 <section class="card fade-in delay-5">
@@ -186,7 +182,6 @@ function divideAndConquer(problem):
     </div>
 </section>
 
-
 <!-- 7. DP -->
 <section class="card fade-in delay-6">
     <h2>7. Dynamic Programming – Resource Allocation</h2>
@@ -211,19 +206,19 @@ function DP():
     </div>
 </section>
 
-
 <footer>© 2025 Aditya</footer>
 
-<!-- INLINE SCRIPT (NO NEED FOR script.js) -->
+<!-- INLINE SCRIPT (runs after DOM is ready) -->
 <script>
-document.querySelectorAll(".algo-btn").forEach(button => {
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".algo-btn").forEach(button => {
     button.addEventListener("click", () => {
-        const box = button.nextElementSibling;
-        box.classList.toggle("open");
-
-        button.textContent =
-            box.classList.contains("open") ? "Hide Algorithm" : "Show Algorithm";
+      const box = button.nextElementSibling;
+      if (!box) return;
+      box.classList.toggle("open");
+      button.textContent = box.classList.contains("open") ? "Hide Algorithm" : "Show Algorithm";
     });
+  });
 });
 </script>
 
